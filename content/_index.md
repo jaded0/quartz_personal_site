@@ -8,7 +8,7 @@ I work with the door open. I'll update this site with every little project and r
 
 ## current status
 - Considering grad schools to study deep learning. 
-- Reading about hebbian gradient upeate rules.
+- Reading about [hebbian](site/Hebbian%20Learning.md) gradient update rules.
 - Finishing an internship building document understanding for life science methods documents.
 
 ## goals
