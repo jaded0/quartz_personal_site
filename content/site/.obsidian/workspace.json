@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "A beginning.md",
+                "file": "Hebbian Learning.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "A beginning.md",
+                "file": "Hebbian Learning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "A beginning.md",
+                "file": "Hebbian Learning.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "A beginning.md"
+                "file": "Hebbian Learning.md"
               }
             }
           }
@@ -157,6 +157,6 @@
   },
   "active": "6ae10871a85cc77a",
   "lastOpenFiles": [
-    "A beginning.md"
+    "Hebbian Learning.md"
   ]
 }
