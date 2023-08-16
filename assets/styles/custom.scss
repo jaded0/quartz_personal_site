@@ -28,4 +28,90 @@
 }
 
 
+.chatbot-container {
+  font-family: var(--font-body);
+  width: 300px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border: var(--outlinegray) 1px solid; // Use the same border style
+  border-radius: 10px; // Rounded corners for the whole container
+  background-color: var(--light);
+
+  @media all and (max-width: 1200px) {
+      width: 250px;
+  }
+}
+
+.chatbot-header {
+  font-family: var(--font-header);
+  padding: 1rem;
+  background-color: var(--dark);
+  color: var(--light);
+  text-align: center;
+  border-bottom: var(--outlinegray) 1px solid; // Adds separation between header and messages
+  border-radius: 5px; // Rounded corners for the whole container
+}
+
+.chatbot-messages {
+  max-height: 300px;
+  overflow-y: scroll;
+  padding: 1rem;
+  color: var(--dark);
+  list-style: none; 
+  margin: 0;
+}
+
+.message {
+  margin: 0.5em 0;
+  padding: 0.25em 1em;
+  border: var(--outlinegray) 1px solid;
+  border-radius: 5px;
+}
+
+.user-message {
+  background-color: var(--light); 
+  color: var(--dark);
+  align-self: flex-end; 
+}
+
+.bot-message {
+  background-color: var(--dark); 
+  color: var(--light);
+  align-self: flex-start; 
+}
+
+.chatbot-input-area {
+  display: flex;
+  border-top: var(--outlinegray) 1px solid; // Adds separation between messages and input
+}
+
+#chat-input {
+  flex: 1;
+  padding: 1rem;
+  font-family: var(--font-body);
+  border: none;
+  border-right: var(--outlinegray) 1px solid; // Separates the input from the send button
+  color: var(--dark);  
+  background-color: var(--light);
+
+  &:focus {
+      outline: none;
+  }
+}
+
+#send-message-btn {
+  padding: 1rem;
+  background-color: var(--secondary);
+  color: var(--dark);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+  transition: background-color 0.3s;
+
+  &:hover {
+      background-color: var(--dark);
+      color: var(--light); 
+  }
+}
 

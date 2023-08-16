@@ -15,6 +15,86 @@
         {{end}}
     </article>
     {{partial "footerIndex.html" .}}
+    <div class="chatbot-container">
+        <div class="chatbot-header">Chat with My Resume</div>
+        <div class="chatbot-messages" id="chat-messages">
+            <!-- This is where chat messages will be dynamically added -->
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chat-input" placeholder="Type your question...">
+            <button id="send-message-btn">Send</button>
+        </div>
+    </div>  
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const chatInput = document.getElementById("chat-input");
+      const chatMessages = document.getElementById("chat-messages");
+      const chatHistory = []; // Store chat history here
+  
+      // Function to send messages
+      function sendMessage() {
+          // Ensure the input isn't empty
+          if (chatInput.value.trim() !== "") {
+              // Add user message to chat history
+              chatHistory.push({role: "user", content: chatInput.value});
+              
+              // Display user message in chatbox
+              const userMessage = document.createElement("div");
+              userMessage.textContent = "You: " + chatInput.value;
+              userMessage.classList.add("message", "user-message");
+              chatMessages.appendChild(userMessage);
+
+              console.log("chatHistory: " + chatHistory);
+              // Fetch the response from the bot
+              fetch("https://us-central1-personal-site-396022.cloudfunctions.net/get_chat", {
+                  method: "POST",
+                  mode: "cors",
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({
+                      messages: chatHistory
+                  })
+              })
+              .then(response => response.json())
+              .then(data => {
+                  // Add bot message to chat history
+                  chatHistory.push({role: "assistant", content: data});
+  
+                  // Display bot message in chatbox
+                  const botMessage = document.createElement("div");
+                  botMessage.textContent = "Jaden-Bot: " + data;
+                  botMessage.classList.add("message", "bot-message");
+                  chatMessages.appendChild(botMessage);
+              })
+              .catch(error => {
+                  console.error("Error fetching bot response:", error);
+              });
+  
+              // Clear the input
+              chatInput.value = "";
+          }
+      }
+  
+      // Event listener for the Send button
+      document.getElementById("send-message-btn").addEventListener("click", sendMessage);
+  
+      // Event listener to detect the "Enter" key on the chat input
+      chatInput.addEventListener("keydown", function(event) {
+          // Check if the pressed key is "Enter"
+          if (event.key === "Enter" || event.keyCode === 13) {
+              // Prevent the default behavior (form submission, if any)
+              event.preventDefault();
+  
+              // Trigger the send message function
+              sendMessage();
+          }
+      });
+  });
+  </script>
+  
+  
 </body>
 </html>
