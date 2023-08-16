@@ -21,7 +21,9 @@ It's hard to understand codebases. I'd like an automatic tool for it, that can s
 6. Remap function calls from between function-function to between subgraph function call-function.
 7. Run functions and parts of functions through OpenAI API to get summaries, and add the summaries to the nodes in the dot file.
 8. Create visualization from the dot file with javascript package.
-9. Create tree-like structure to allow for hiding/revealing of nodes, code sections, and summaries.
+9. One of two things:
+	-  Create tree-like structure to allow for hiding/revealing of nodes, code sections, and summaries.
+	- Somehow create on-click handlers for elements on the visualization to allow for more hands-on hiding and revealing of elements?
 # Generated project plan:
 
 Your idea sounds fantastic! Let's break down the steps to achieve this:
