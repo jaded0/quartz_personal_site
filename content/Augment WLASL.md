@@ -3,7 +3,7 @@ title: "Augment WLASL"
 tags:
 - stablediffusion
 ---
-
+#stablediffusion  
 # previous attempt
 My little attempt at straight training an entire stable diffusion model on just the WLASL dataset was fairly ineffectual. Months of training on university compute resources culminated in a bit of a blurry mess:
 ![[/files/example_book_43402_7bbb996a33a6757f0c3d.gif|500]]
