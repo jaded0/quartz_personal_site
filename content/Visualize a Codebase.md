@@ -2,7 +2,9 @@
 title: "Visualize a Codebase"
 tags:
 - project
+- python
 ---
+ #project #python
 # Summary:
 It's hard to understand codebases. I'd like an automatic tool for it, that can show it to me in a visual structure. 
 
