@@ -1,9 +1,9 @@
 ---
 title: "Hebbian Learning"
 tags:
-- test
----
 
+---
+ 
 
 It's an alternative to backprop that uses only local update rules. It seems far more similar to spiking neural networks in that it tries to follow a more "fires together, wires together" paradigm. What's really appealing to me about this weight update mechanism is that it feels more online learning-friendly. I've long wondered why we try to represent short-term memory as activations only, when we know that they ought to have a pathway towards being encoded in the weights. 
 
