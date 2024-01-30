@@ -8,7 +8,7 @@ tags:
 [[2024-01-30]]
 
 My loss graph looks wild:
-![[files/W&B Chart 1_30_2024, 8 55 01 AM.png]]
+![[files/W&BChart1_30_202485501AM.png]]
 [Weights & Biases](https://wandb.ai/jadens_team/hebby/runs/qmezepr7?workspace=user-jaden-lorenc)
 I attribute the wave pattern to the self-reinforcing [[Hebbian Learning|weight updates]] improving performance quickly when they've found something right, then rapidly diverging because of biases inherent in that pattern being magnified and getting out of control. Unfortunately, it's like it's rewarding extreme-ness too much.
 
