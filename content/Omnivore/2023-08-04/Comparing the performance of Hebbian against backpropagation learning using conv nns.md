@@ -11,6 +11,7 @@ tags:
  #hebbian 
   
 [Read on Omnivore](https://omnivore.app/me/comparing-the-performance-of-hebbian-against-backpropagation-lea-189c2643103)
+
 [Read Original](https://link.springer.com/article/10.1007/s00521-021-06701-4)
 
 ## Highlights
