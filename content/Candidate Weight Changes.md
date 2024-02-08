@@ -2,14 +2,15 @@
 title: "Candidate Weight Changes"
 tags:
 - hebbian
+- ideas
 ---
- #hebbian 
+ #hebbian #ideas 
 
 [[2024-01-30]]
 
 My loss graph looks wild:
 
-![[/files/W&BChart1_30_202485501AM.png]]
+![[/files/W&BChart1_30_202485501AM.png|600]]
 
 
 [Weights & Biases](https://wandb.ai/jadens_team/hebby/runs/qmezepr7?workspace=user-jaden-lorenc)
