@@ -17,3 +17,4 @@ tags:
 
 ## Convolutional Neural Networks (CNNs)
 - [[PatchMixer|PatchMixer]], very strange. It compares itself a **lot** with the [[transformer]], though.
+- [[zotero_notes/patient_sim/dilated-convolutions-BC5HWKRF|dilated-convolutions-BC5HWKRF]] very weird

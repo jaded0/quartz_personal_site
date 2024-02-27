@@ -9,7 +9,7 @@ tags:
 Based on the MIMIC dataset.
 ## data prep
 - time series data collected, normalized
-- filled in missing data, imputed via linear interpolation, or in the case of no instance of this data at all, the median
+- filled in missing data, imputed via linear interpolation, or in the case of no intag:#work/patientsimstance of this data at all, the median
 - static data tacked onto every single instance of the time series data
 ## GRU
 (it's bidirectional)
