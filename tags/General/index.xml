@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>General on</title><link>https://jadenlorenc.com/tags/General/</link><description>Recent content in General on</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://jadenlorenc.com/tags/General/index.xml" rel="self" type="application/rss+xml"/><item><title>I Built a Hebbian RNN next steps</title><link>https://jadenlorenc.com/I-Built-a-Hebbian-RNN-next-steps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://jadenlorenc.com/I-Built-a-Hebbian-RNN-next-steps/</guid><description>#hebbian
+2024-02-09 08:06
+Four things to work on next:
+Try out some new rules found in the survey, [[List of Hebbian Weight Update Rules|listed here]] Use a more optimized dataset, perhaps simpler.</description></item></channel></rss>

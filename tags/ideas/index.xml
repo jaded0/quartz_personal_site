@@ -4,4 +4,6 @@ My loss graph looks wild:
 ![[/files/W&amp;amp;BChart1_30_202485501AM.png|600]]
 Weights &amp;amp; Biases
 I attribute the wave pattern to the self-reinforcing [[Hebbian Learning|weight updates]] improving performance quickly when they&amp;rsquo;ve found something right, then rapidly diverging because of biases inherent in that pattern being magnified and getting out of control.</description></item><item><title>Cyclic Plasticity Values</title><link>https://jadenlorenc.com/Cyclic-Plasticity-Values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://jadenlorenc.com/Cyclic-Plasticity-Values/</guid><description>#hebbian #ideas
-Inspired by a youtube video by Artem Kirsanov (I think it might be this one), which describes how biological neurons have a 6hr period of varying plasticity, and each might be most plastic at a different time than the rest.</description></item></channel></rss>
+Inspired by a youtube video by Artem Kirsanov (I think it might be this one), which describes how biological neurons have a 6hr period of varying plasticity, and each might be most plastic at a different time than the rest.</description></item><item><title>HPCA</title><link>https://jadenlorenc.com/HPCA/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://jadenlorenc.com/HPCA/</guid><description>#hebbian #phd
+[[2024-02-07]]
+An extension to [[Ojas Rule]], pulling the principle of extracting the main direction from the data, out into the space for more than just one neuron at a time.</description></item></channel></rss>
