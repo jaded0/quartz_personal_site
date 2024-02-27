@@ -12,3 +12,8 @@ Keith's problem with the triplet idea was that the relationship between differen
 
 The idea with a triplet is really cool. I'm biased, because I suggested it to Keith, and he found a paper that actually described just what I was talking about. Instead of having tons of empty space taken up by features that don't have data available at a given timestep, or alternatively, taken up by gaps in time where the feature doesn't have data, we can directly encode a sort of 'value' of the data, some sort of data identity, and finally the positional encoding of the data. Then, we just give one piece of data at a time. It can be lots of different kinds of features, doesn't matter, but it's one feature at a time. If they happen at the same timestamp, we just give them the same positional encoding and still put them one after another. 
 ![[zotero_notes/patient_sim/triplet-transformer-G7LK8EX5#triplet justification|triplet-transformer-G7LK8EX5]]
+
+
+# notes
+- is there a causal mask in the Contextual Triplet Embedding?
+- i should use the attention layer less or smth. this one uses two.

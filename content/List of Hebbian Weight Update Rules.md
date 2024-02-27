@@ -47,5 +47,8 @@ $$ \Delta w_i = \eta \frac{dy}{dt} x_i $$
 $$
 \Delta \mathbf{w}_i = \eta y_i \left( \mathbf{x} - \sum_{j=1}^{i} y_j \mathbf{w}_j \right)
 $$
+### ABCD:
+$$ \Delta w_{ij} = \eta \cdot (A_w x_i y + B_w x_i + C_w y + D_w) $$
 
+# whence
 pulled from [[zotero_notes/hebbian/Survey-of-Hebbian-Learning-Lagani-2023-CF4RA22D#^12a1aa|Survey-of-Hebbian-Learning-Lagani-2023-CF4RA22D]]
