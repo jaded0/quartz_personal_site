@@ -1,5 +1,5 @@
 ---
-title: What Exercise 3.2 is actually doing (minimum-energy input, intuitively)
+title: What a minimum-energy input actually is, intuitively
 created: 2026-06-25
 authorship: ai-generated
 model: claude-opus-4-8

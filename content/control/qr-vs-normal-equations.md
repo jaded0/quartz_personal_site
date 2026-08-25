@@ -1,5 +1,5 @@
 ---
-title: The numerical view of least squares — why QR/orthogonal beats the normal equations
+title: Why QR beats the normal equations
 created: 2026-06-24
 authorship: ai-generated
 model: claude-opus-4-8

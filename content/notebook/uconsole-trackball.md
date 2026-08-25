@@ -1,5 +1,5 @@
 ---
-title: uConsole - Trackball & Pointer
+title: Fixing the uConsole trackball with custom QMK firmware
 date: 2026-06-06
 tags:
 - uconsole
