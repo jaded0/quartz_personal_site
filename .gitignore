@@ -5,3 +5,5 @@ public
 tsconfig.tsbuildinfo
 .DS_Store
 content/.obsidian
+__pycache__/
+*.pyc
