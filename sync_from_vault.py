@@ -73,6 +73,11 @@ SECRET_PATTERNS = [
     (re.compile(r"\b(gh[pousr]_[A-Za-z0-9]{20,})"), "GitHub token"),
     (re.compile(r"-----BEGIN (?:RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----"), "private key"),
     (re.compile(r"(?i)\b(?:api[_-]?key|secret|passwd|password|access[_-]?token)\s*[:=]\s*['\"]?[A-Za-z0-9/_\-+.]{12,}"), "credential assignment"),
+    # "the login password is `1212`" — prose, not an assignment. Caught this
+    # phrasing only after it nearly shipped a live sudo password.
+    (re.compile(r"(?i)\b(?:password|passphrase|pin|passcode)\b[^.\n]{0,40}?\bis\b[^.\n]{0,20}?[`'\"*]{0,2}[A-Za-z0-9!@#$%^&*_\-]{4,}"), "password stated in prose"),
+    (re.compile(r"(?i)\b[a-z0-9-]+\.ts\.net\b"), "Tailscale MagicDNS name"),
+    (re.compile(r"(?i)\btskey-[A-Za-z0-9-]+"), "Tailscale auth key"),
     (re.compile(r"\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b"), "UUID (drive/device identifier)"),
     (re.compile(r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b"), "IP address"),
     (re.compile(r"\b[a-z0-9]{6,}\.dns\.nextdns\.io\b"), "NextDNS profile"),
