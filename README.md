@@ -1,19 +1,65 @@
-# Quartz
+# jadenlorenc.com
 
-Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
+My digital garden. [Quartz 5](https://github.com/jackyzha0/quartz), deployed to GitHub Pages.
 
-1. Extremely fast natural-language search
-2. Customizable and hackable design based on Hugo
-3. Automatically generated backlinks, link previews, and local graph
-4. Built-in CJK + Latex Support and Admonition-style callouts
-5. Support for both Markdown Links and Wikilinks
+## Publishing a note
 
-Check out some of the [amazing gardens that community members](https://quartz.jzhao.xyz/notes/showcase/) have published with Quartz!
+Add `publish: true` to a note's frontmatter in the vault (`~/Documents/brain`). That's it —
+the daily timer picks it up. Remove the flag and the page comes down.
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+```yaml
+---
+title: A thing I figured out
+publish: true
+section: notebook      # essays | research | control | notebook | reference
+slug: a-thing          # optional; controls the URL
+description: ...       # optional; derived from the first paragraph otherwise
+---
+```
 
-🔗 Get Started: https://quartz.jzhao.xyz/
+Other frontmatter the sync understands:
 
-![Quartz Example Screenshot](./screenshot.png)*Quartz Example Screenshot*
+| key | effect |
+|---|---|
+| `authorship: ai-generated` | prepends a disclosure banner (uses `model:` if present) |
+| `secrets_reviewed: true` | silences the credential scanner for that note — only after you've actually read it |
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+## Running it
+
+```bash
+python3 sync_from_vault.py            # dry run: what would change
+python3 sync_from_vault.py --apply    # write into content/
+./publish.sh                          # sync + commit + push (CI deploys)
+npx quartz build --serve              # preview at localhost:8080
+```
+
+Needs Node 22+ (`nvm use 22`).
+
+## How the sync protects you
+
+`sync_from_vault.py` replaced an older script that only ever copied files in — it never
+deleted, never handled renames, never copied attachments, and matched its publish tag as a
+bare substring anywhere in the file.
+
+The current one:
+
+- **Denies by path first.** Daily notes, `private/`, `church/`, `archive/`, `dragn-obsidian/`,
+  `zotero_notes/`, coursework and answer keys never publish, even if flagged. A flag can be
+  set by accident; a path can't.
+- **Scans for credentials** and aborts the whole run without writing anything if a flagged
+  note contains something key-shaped, an IP, a UUID, or a phone number.
+- **Mirrors with delete**, so unflagging a note actually takes it down.
+- **Copies referenced attachments** into `content/attachments/`.
+- **Rewrites links.** Wikilinks to published notes are remapped onto their slugs; links to
+  unpublished notes are unwrapped to plain text instead of shipping as dead links.
+- **Cleans bodies** — strips stray inline hashtag lines and Obsidian block anchors.
+
+## Automation
+
+```bash
+systemctl --user enable --now garden-sync.timer
+systemctl --user start garden-sync          # run once now
+journalctl --user -u garden-sync -n 50      # why did it not publish?
+```
+
+A failed run means nothing was published, which is the intended direction.
