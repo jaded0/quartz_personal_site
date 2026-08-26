@@ -36,8 +36,9 @@ CONTENT = SITE / "content"
 ATTACH_DIR = "attachments"
 
 # Files in content/ that this script does not manage and must never delete.
-# Hand-written landing pages live in the repo, not the vault; never delete them.
-PRESERVE_NAMES = {"index.md"}
+# Everything under content/ is generated from the vault. Nothing is preserved
+# except Obsidian's own config if it ever appears there.
+PRESERVE_NAMES: set[str] = set()
 
 # Directories that never publish, regardless of frontmatter. Belt and
 # suspenders: a publish flag can be set by accident, a path cannot.
@@ -235,9 +236,13 @@ def main() -> int:
 
             # destination: `section:` overrides the vault folder,
             # `slug:` overrides the filename (and therefore the URL)
-            section = fm.get("section")
             stem = str(fm.get("slug") or src.stem)
-            dest = Path(section) / f"{stem}.md" if section else rel.with_name(f"{stem}.md")
+            if "section" in fm:
+                sec = str(fm.get("section") or "").strip().strip("/")
+                # section: "" puts the page at the content root (the homepage)
+                dest = Path(sec) / f"{stem}.md" if sec else Path(f"{stem}.md")
+            else:
+                dest = rel.with_name(f"{stem}.md")
             selected[dest] = (rel, fm, body)
 
     # --- fail closed on anything that smells like a credential -----------
@@ -260,6 +265,8 @@ def main() -> int:
     # `slug:` does not break inbound wikilinks.
     name_to_slug: dict[str, str] = {}
     for dest, (rel, _fm, _body) in selected.items():
+        if dest.stem == "index":
+            continue  # every section has one; the name is ambiguous by design
         name_to_slug[Path(rel).stem] = dest.stem
         name_to_slug[str(Path(rel).with_suffix(""))] = dest.stem
         for alias in (_fm.get("aliases") or []):
@@ -330,6 +337,18 @@ def main() -> int:
             fm_out.pop("tags", None)
         head = yaml.safe_dump(fm_out, sort_keys=False, allow_unicode=True).strip()
         outputs[dest] = f"---\n{head}\n---\n\n{body}"
+
+    # A site with no homepage is a broken site. Since nothing under content/
+    # is preserved any more, an accidental unflag of personal-site/homepage.md
+    # would silently delete it — refuse instead.
+    if Path("index.md") not in outputs:
+        print(
+            "\nABORTED — no page resolves to the site root (content/index.md).\n"
+            "Check that personal-site/homepage.md still has `publish: true`\n"
+            'and `section: ""`. Nothing was written.',
+            file=sys.stderr,
+        )
+        return 1
 
     # --- compute the mirror diff ----------------------------------------
     CONTENT.mkdir(parents=True, exist_ok=True)

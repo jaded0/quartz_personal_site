@@ -2,10 +2,22 @@
 
 My digital garden. [Quartz 5](https://github.com/jackyzha0/quartz), deployed to GitHub Pages.
 
+## Where things live
+
+Everything under `content/` is **generated**. Never edit it — the next sync overwrites it.
+Edit the note in the vault (`~/Documents/brain`) instead.
+
+- Topic notes stay where they naturally live: vault root, `robust_control/`,
+  `stack breakdown/`, `uConsole/`.
+- **Site furniture lives in `personal-site/`** — `homepage.md` plus one intro page per
+  section. These exist only because the site does, so they're kept together.
+- `garden.base` at the vault root is the control panel: what's published, what's been pulled
+  down, and what's missing a slug or description.
+
 ## Publishing a note
 
-Add `publish: true` to a note's frontmatter in the vault (`~/Documents/brain`). That's it —
-the daily timer picks it up. Remove the flag and the page comes down.
+Add `publish: true` to a note's frontmatter in the vault. That's it — the daily timer picks
+it up. Remove the flag and the page comes down.
 
 ```yaml
 ---
@@ -23,6 +35,10 @@ Other frontmatter the sync understands:
 |---|---|
 | `authorship: ai-generated` | prepends a disclosure banner (uses `model:` if present) |
 | `secrets_reviewed: true` | silences the credential scanner for that note — only after you've actually read it |
+
+`section: ""` puts a page at the site root; that plus `slug: index` is how
+`personal-site/homepage.md` becomes `/`. The sync refuses to run if nothing resolves to the
+root, so an accidental unflag can't silently delete the homepage.
 
 ## Running it
 
