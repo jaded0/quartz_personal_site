@@ -1,6 +1,8 @@
 ---
 title: 🪴 jaden lorenc
 publish: true
+description: I work with the door open. This is the live transcript — research notes,
+  build logs, and the occasional finished argument. Much of it is unpolished on purpose.
 ---
 
 I work with the door open. This is the live transcript — research notes, build logs, and

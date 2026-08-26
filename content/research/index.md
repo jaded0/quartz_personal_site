@@ -1,7 +1,8 @@
 ---
 title: Research
 publish: true
-description: Ephemeral weights — putting a neural network's short-term memory in its parameters instead of its activations — plus the reading behind it.
+description: Ephemeral weights — putting a neural network's short-term memory in its
+  parameters instead of its activations — plus the reading behind it.
 ---
 
 My thesis work, and the reading around it.

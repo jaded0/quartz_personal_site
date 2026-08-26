@@ -1,7 +1,8 @@
 ---
 title: Control
 publish: true
-description: A semester spent treating neural network plasticity as a control problem — the derivations, the controllers, and why the model-based ones lost.
+description: A semester spent treating neural network plasticity as a control problem
+  — the derivations, the controllers, and why the model-based ones lost.
 ---
 
 Ephemeral weights blow up if you push them hard. I spent a semester asking whether that's a
