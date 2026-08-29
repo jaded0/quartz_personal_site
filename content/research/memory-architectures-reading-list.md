@@ -1,6 +1,11 @@
 ---
 title: Memory, fast weights, and serial depth — a reading list
 publish: true
+date: 2026-08-08
+tags:
+- ephemeral-weights
+- thesis
+- fast-weights
 description: Built around Do Language Models Need Sleep? (Lee, McLeish, Goldstein,
   Fanti — arXiv 2605.26099), sequenced so each track answers a question the previous
   one raises.
@@ -18,7 +23,7 @@ Annotations say **what the paper is for**, not just what it is. Skip freely; the
 
 Chosen for *you*: skips what our conversations already covered (the reassociation identity, KV mechanics, hybrid layouts, the sleep paper itself), weights toward your dissertation's vocabulary and your estimation background.
 
-1. **Schlag, Irie & Schmidhuber — "Linear Transformers Are Secretly Fast Weight Programmers"** (ICML 2021). The conceptual spine. Fast weights as *programmed* memory, delta rule as the write primitive — this is your dissertation's middle tier given its canonical citation and cleanest formulation. You already know the math; read it for the framing you'll write against.
+1. ~~**Schlag, Irie & Schmidhuber — "Linear Transformers Are Secretly Fast Weight Programmers"**~~ (ICML 2021). **Read 2026-08-28** — notes in [[linear-transformers-fast-weight-programmers|Linear transformers are fast weight programmers]], audio guide in `papers/`. The conceptual spine. Fast weights as *programmed* memory, delta rule as the write primitive — this is your dissertation's middle tier given its canonical citation and cleanest formulation. You already know the math; read it for the framing you'll write against.
 2. **Gu, Dao et al. — "HiPPO"** (arXiv 2008.07669). What *should* a fixed-size memory store? Answer derived, not designed: optimal online polynomial projection of the input history. The one paper in the stack that natively speaks estimation theory, and the connection nobody in your committee's orbit will make for you. Grok the derivation, not just the result.
 3. **Dao & Gu — "Transformers are SSMs" (SSD)** (arXiv 2405.21060). Formalizes what we built by hand: attention and SSMs are one operator family, split by structure imposed on the mixing matrix. After this, every architecture in Tracks B and D is a special case, which is exactly what "80% there" means.
 4. **Liu et al. — "The Serial Scaling Hypothesis"** (arXiv 2507.12549). The depth-vs-memory axis, stated as a general thesis with the complexity-theory backing (P-completeness, shortcut learning). This is the *why* under the sleep paper, and the frame that makes "consolidation is computation" a defensible dissertation claim rather than a slogan.
