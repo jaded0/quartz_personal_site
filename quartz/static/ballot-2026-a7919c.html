@@ -12,7 +12,7 @@
   --bg:#fbfaf7; --card:#fff; --ink:#1f2328; --muted:#62686f; --line:#e4e1d9; --soft:#f3f1ec;
   --accent:#2f6f5e; --accent-soft:#e3f0eb; --warn:#7a4f00; --warn-soft:#fdf1d6;
   --r:#b2483f; --d:#2f5fa7; --o:#7a6a9a; --jaden:#6a4c93; --jaden-soft:#f1ecf8;
-  --radius:14px; --bar:104px;
+  --radius:14px; --bar:0px;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -39,6 +39,16 @@ button{font:inherit;color:inherit;cursor:pointer}
 @media (prefers-color-scheme: dark){.tag{color:#111}}
 
 /* go card */
+details.go{background:var(--warn-soft);border-radius:999px;margin:8px 0 4px;display:inline-block;max-width:100%}
+details.go[open]{border-radius:var(--radius);display:block}
+details.go>summary{padding:8px 14px;font-size:.95rem;font-weight:600;color:var(--warn)}
+details.go>summary::after{content:" \25BE";font-size:.8em}
+details.go[open]>summary::after{content:" \25B4"}
+.go-body{padding:0 14px 12px}
+.vrow{margin:10px 0}
+.vlbl{font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+#openView{background:var(--soft)}
 .go{background:var(--warn-soft);border-radius:var(--radius);padding:12px 14px;margin:10px 0}
 .go b{color:var(--warn)}
 .go .main{font-size:1.02rem}
@@ -59,12 +69,12 @@ details.more[open]>summary::before{content:"\25BE  "}
 .seg{display:flex;background:var(--soft);border-radius:10px;padding:2px;flex:1}
 .seg button{flex:1;border:0;background:transparent;border-radius:8px;padding:6px 8px;font-size:.86rem;min-height:34px}
 .seg button[aria-pressed=true]{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.15);font-weight:600}
-.chips{justify-content:space-between}
+.chips{justify-content:flex-start}
 .chip .ico{font-style:normal}
 @media (max-width:380px){.chip .ico{display:none}.chip{padding:5px 9px}}
 .chip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 10px;font-size:.84rem;min-height:34px;white-space:nowrap}
 .chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
-.lensnote{display:none;font-size:.88rem;background:var(--accent-soft);border-radius:10px;padding:8px 10px;margin:10px 0}
+.lensnote{display:none;font-size:.9rem;padding:6px 2px;margin:6px 0}
 body[data-lens] .lensnote{display:block}
 .lensnote button{border:0;background:none;color:var(--accent);text-decoration:underline;padding:0}
 
@@ -83,7 +93,7 @@ details.race[open]>summary::after{transform:rotate(-135deg);top:23px}
 .pill.mine{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
 .pill.mine:empty{display:none}
 .race .body{padding:0 14px 14px}
-.why{font-size:.95rem;padding:8px 10px;border-radius:10px;background:var(--soft);margin:0 0 4px}
+.why{font-size:.95rem;margin:0 0 2px}
 
 /* compare grid */
 .cmp{margin:10px 0 4px}
@@ -170,40 +180,21 @@ body.sheet-open{overflow:hidden}
 </head>
 <body>
 <main>
-<h1>Your ballot, today</h1>
-<p class="muted small">Utah County, Nov 3 2026. Made for Alena by Jaden. Comes down tonight.</p>
+<h1>Your ballot</h1>
+<p class="muted small" style="margin-top:0">Nov 3 &middot; vote by 8 p.m.</p>
 
-<div class="go">
-  <div class="main">&#128205; <b>By 8 p.m.:</b> register and vote at the <b>Health and Justice Building</b>, 151 S University Ave.</div>
-  <div class="bring">Bring a photo ID and something with your name and this address on it.</div>
-  <div class="go-links"><a class="src" href="https://maps.apple.com/?q=151+S+University+Ave,+Provo,+UT+84601" target="_blank" rel="noopener">Directions</a><a href="tel:+18018518683">Call the county</a></div>
-  <details class="more"><summary>Details</summary>
-    <p>Tell them you need to <b>register and vote today</b>. You'll fill out a <b>provisional ballot</b>, which doubles as your registration and gets counted once the county confirms you're eligible. If you're in line before 8 p.m., you get to vote.</p>
-    <p><b>Photo ID:</b> driver license, state ID, or passport.</p>
-    <p><b>Proof you live here</b> (if your ID shows another address): a bank statement, pay stub, lease, utility bill, or government mail with your name and this address. Paper is safer than a screenshot.</p>
-    <p class="small">Forgot something? Vote anyway; you'll have until next Monday to bring it to the county clerk.</p>
-    <p class="small"><b>Not the library:</b> Provo City Library only has a drop box for people who already have a ballot. Backup vote center: Provo Legacy Village, 4146 N University Ave, same hours.</p>
-    <p class="small"><a class="src" href="https://vote.utahcounty.gov/voting-locations" target="_blank" rel="noopener">County voting locations</a> &middot; (801) 851-VOTE</p>
-  </details>
-</div>
-
-<p class="small muted">Tap anything to go deeper. Pick your votes as you read; they save on this phone, and <b>My ballot</b> at the bottom collects them in ballot order.</p>
-
-<div class="bar" id="bar">
-  <div class="bar-row">
-    <div class="seg" role="group" aria-label="How much to show">
-      <button type="button" data-depth="overview" aria-pressed="true">Overview</button>
-      <button type="button" data-depth="compare" aria-pressed="false">Compare</button>
-      <button type="button" data-depth="deep" aria-pressed="false">Everything</button>
-    </div>
+<details class="go">
+  <summary>&#128205; Where to vote</summary>
+  <div class="go-body">
+    <p class="main"><b>Health and Justice Building</b><br>151 S University Ave, Provo. Open until 8 p.m.</p>
+    <p>Say you need to <b>register and vote today</b>.</p>
+    <p><b>Bring:</b> a photo ID, plus something with your name and this address (bank statement, pay stub, lease, bill) if your ID shows a different one.</p>
+    <div class="go-links"><a class="src" href="https://maps.apple.com/?q=151+S+University+Ave,+Provo,+UT+84601" target="_blank" rel="noopener">Directions</a><a href="tel:+18018518683">Call the county</a></div>
+    <p class="small">You'll get a provisional ballot; it counts once they confirm you're eligible. In line before 8 means you vote. Forgot something? Vote anyway and bring it to the county clerk by next Monday.</p>
+    <p class="small">Not the library: it only has a drop box. Backup: Provo Legacy Village, 4146 N University Ave.</p>
   </div>
-  <div class="bar-row chips">
-    <button type="button" class="chip" data-lens="" aria-pressed="true">All</button>
-    <button type="button" class="chip" data-lens="housing" aria-pressed="false"><i class="ico">&#127968; </i>Housing</button>
-    <button type="button" class="chip" data-lens="transit" aria-pressed="false"><i class="ico">&#128652; </i>Transit</button>
-    <button type="button" class="chip" data-lens="immigration" aria-pressed="false"><i class="ico">&#127758; </i>Immigration</button>
-  </div>
-</div>
+</details>
+
 <div class="lensnote" id="lensnote"></div>
 
 <div id="races"></div>
@@ -214,11 +205,31 @@ body.sheet-open{overflow:hidden}
 </main>
 
 <div class="bottom">
-  <button type="button" id="openSheet">My ballot &middot; <span id="count">0 decided</span></button>
+  <button type="button" id="openView" aria-label="View options">&#9776; View</button>
+  <button type="button" id="openSheet">&#10003; My ballot <span id="count">0/9</span></button>
   <button type="button" id="toTop" aria-label="Back to top">&#8593;</button>
 </div>
 <div class="toast" id="toast"></div>
 
+<div class="sheet" id="view" aria-hidden="true">
+  <div class="panel" role="dialog" aria-label="View options">
+    <div class="grab"></div>
+    <div class="vrow"><div class="vlbl">How much</div>
+      <div class="seg" role="group">
+        <button type="button" data-depth="overview" aria-pressed="true">Folded</button>
+        <button type="button" data-depth="compare" aria-pressed="false">Compare</button>
+        <button type="button" data-depth="deep" aria-pressed="false">Everything</button>
+      </div></div>
+    <div class="vrow"><div class="vlbl">Topic</div>
+      <div class="chips">
+        <button type="button" class="chip" data-lens="" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-lens="housing" aria-pressed="false">&#127968; Housing</button>
+        <button type="button" class="chip" data-lens="transit" aria-pressed="false">&#128652; Transit</button>
+        <button type="button" class="chip" data-lens="immigration" aria-pressed="false">&#127758; Immigration</button>
+      </div></div>
+    <p class="small muted">Tap any card or row to open it. Your picks save on this phone.</p>
+  </div>
+</div>
 <div class="sheet" id="sheet" aria-hidden="true">
   <div class="panel" role="dialog" aria-label="My ballot">
     <div class="grab"></div>
@@ -243,9 +254,8 @@ body.sheet-open{overflow:hidden}
 function SRC(h,t){return '<li><a class="src" href="'+h+'" target="_blank" rel="noopener">'+t+'</a></li>'}
 var R='R',D='D';
 var RACES=[
-{sec:'Start here'},
-{id:'amendB',title:'Amendment B',short:'Should laws voters pass themselves need 60% if they raise taxes?',issues:['housing','transit'],measure:true,star:true,
- ask:'Jaden and Brooklyn are both voting <b>Against</b>.',
+{id:'amendB',title:'Amendment B',short:'60% rule for voter-made tax laws',issues:['housing','transit'],measure:true,star:true,
+ ask:'Jaden &amp; Brooklyn: <b>Against</b>',
  why:'It decides how much power your own vote has later: whether a simple majority of voters can still pass a law that needs money.',
  more:'<p><b>What\'s an initiative?</b> A law regular people write, gather signatures for, and put on the ballot themselves, without the Legislature. In 2018 Utahns used one to expand Medicaid (it passed with about 53%) after the Legislature wouldn\'t.</p><p>B would require 60% for any initiative that creates or raises a tax, or slows a scheduled tax cut. It doesn\'t apply to the Legislature, which can still raise taxes with a simple majority. It\'s retroactive to Nov 1, 2026.</p>',
  cands:[{id:'for',name:'For',sub:'yes on B'},{id:'against',name:'Against',sub:'no on B'}],
@@ -264,7 +274,7 @@ var RACES=[
         ['Brooklyn','<b>Against.</b> "It affects the direct power of our votes in the future."']],
  jp:'Jaden and Brooklyn: Against'},
 
-{sec:'Matters most for your issues'},
+{sec:'Your issues'},
 {id:'house',title:'U.S. House, District 3',short:'Your one vote in Congress.',issues:['housing','transit','immigration'],
  why:'Immigration law and ICE funding are decided here, nowhere else on your ballot.',
  more:'<p>Federal housing money and national immigration policy run through Congress. Maloy is heavily favored (the district leans Republican by 20+ points), but your vote still counts toward which party controls the House.</p><p>Also on the ballot, with almost no coverage: Easley (Constitution), Stoddard (Libertarian), Scott and Hooslyn (unaffiliated).</p>',
@@ -333,7 +343,7 @@ var RACES=[
         ['Brooklyn','"Norm Thurston kinda cares, and thinks his small actions will help, but David Chappell makes huge promises that he doesn\'t seem to have any idea how to implement."']],
  jp:'Jaden: Chappell'},
 
-{sec:'Lower stakes for your issues'},
+{sec:'The rest'},
 {id:'commB',title:'County Commission, Seat B',short:'Open seat running the county.',issues:['housing','transit'],
  why:'Runs the county budget, roads and jail; zones land outside city limits.',
  more:'<p>One of 3 commissioners. The commission only zones unincorporated land, so most Provo housing decisions are the city council\'s. It does set county road priorities, coordinates with UTA and the cities, and has the final say on the county\'s data center rules.</p>',
@@ -451,7 +461,7 @@ function render(){
   if(r.sec){h+='<h2 data-sec>'+r.sec+'</h2>';return}
   var n=(r.cands||[]).length;
   h+='<details class="race'+(r.star?' star':'')+'" id="race-'+r.id+'" data-issues="'+r.issues.join(' ')+'"><summary>';
-  if(r.star)h+='<span class="flag">&#9733; The one we\'d most ask you to look at</span>';
+  if(r.star)h+='<span class="flag">&#9733; Start here</span>';
   h+='<div class="rt">'+r.title+'</div><div class="rs">'+r.short+'</div>';
   if(r.ask)h+='<div class="ask">'+r.ask+'</div>';
   h+='<div class="pills">';
@@ -510,7 +520,7 @@ function refresh(){
  document.querySelectorAll('[data-mine]').forEach(function(el){var id=el.dataset.mine,r=byId(id),t='';
   if(r.judges){var s=judgeSummary();if(s.y.length||s.n.length)t='✓ You: '+s.y.length+' yes, '+s.n.length+' no'}
   else if(S.v[id])t='✓ You: '+optLabel(r,S.v[id]);el.textContent=t});
- var d=decided();document.getElementById('count').textContent=d[0]+' of '+d[1]+' decided';
+ var d=decided();document.getElementById('count').textContent=d[0]+'/'+d[1];
  renderSheet();
 }
 function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -543,7 +553,7 @@ function setDepth(d){
  document.querySelectorAll('[data-depth]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.depth===d?'true':'false')});
  document.querySelectorAll('details.race').forEach(function(x){x.open=d!=='overview'});
  document.querySelectorAll('details.row, .race details.more').forEach(function(x){x.open=d==='deep'});
- if(d!=='overview')window.scrollTo({top:document.getElementById('races').offsetTop-document.getElementById('bar').offsetHeight-8,behavior:'smooth'});
+ if(d!=='overview')window.scrollTo({top:document.getElementById('races').offsetTop-8,behavior:'smooth'});
 }
 function setLens(l){
  document.querySelectorAll('[data-lens]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lens===l?'true':'false')});
@@ -553,10 +563,12 @@ function setLens(l){
  st.textContent='details.race:not([data-issues~='+l+']),.row[data-issue]:not([data-issue~='+l+']),[data-sec]{display:none}';
  var n=0;document.querySelectorAll('details.race').forEach(function(x){if((x.dataset.issues||'').split(' ').indexOf(l)>=0){x.open=true;n++}});
  document.querySelectorAll('details.row[data-issue~='+l+']').forEach(function(x){x.open=true});
- document.getElementById('lensnote').innerHTML=ICO[l]+' Showing just '+l+', across the '+n+' races where it comes up. <button type="button" data-lens-reset>Show everything</button>';
- window.scrollTo({top:document.getElementById('lensnote').offsetTop-document.getElementById('bar').offsetHeight-8,behavior:'smooth'});
+ document.getElementById('lensnote').innerHTML=ICO[l]+' Just '+l+' ('+n+' races) &middot; <button type="button" data-lens-reset>show all</button>';
+ window.scrollTo({top:document.getElementById('lensnote').offsetTop-8,behavior:'smooth'});
 }
 function goTo(id){closeSheet();if(document.body.hasAttribute('data-lens'))setLens('');var el=document.getElementById('race-'+id);if(!el)return;el.open=true;setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},60)}
+function openView(){var s=document.getElementById('view');s.classList.add('on');s.setAttribute('aria-hidden','false');document.body.classList.add('sheet-open')}
+function closeView(){var s=document.getElementById('view');s.classList.remove('on');s.setAttribute('aria-hidden','true');document.body.classList.remove('sheet-open')}
 function openSheet(){refresh();var s=document.getElementById('sheet');s.classList.add('on');s.setAttribute('aria-hidden','false');document.body.classList.add('sheet-open')}
 function closeSheet(){var s=document.getElementById('sheet');s.classList.remove('on');s.setAttribute('aria-hidden','true');document.body.classList.remove('sheet-open')}
 
@@ -576,11 +588,12 @@ document.addEventListener('click',function(e){
  if(b.dataset.judge){var j=b.dataset.judge;if(S.j[j]===b.dataset.j)delete S.j[j];else S.j[j]=b.dataset.j;save();return}
  if(b.id==='jYes'){JUDGES.forEach(function(j){S.j[j[0]]='y'});save();return}
  if(b.id==='jClear'){S.j={};save();return}
- if(b.dataset.depth){setDepth(b.dataset.depth);return}
- if(b.hasAttribute('data-lens')){setLens(b.dataset.lens);return}
+ if(b.dataset.depth){closeView();setDepth(b.dataset.depth);return}
+ if(b.hasAttribute('data-lens')){closeView();setLens(b.dataset.lens);return}
  if(b.hasAttribute('data-lens-reset')){setLens('');return}
  if(b.dataset.go){goTo(b.dataset.go);return}
  if(b.id==='openSheet'){openSheet();return}
+ if(b.id==='openView'){openView();return}
  if(b.id==='closeSheet'){closeSheet();return}
  if(b.id==='toTop'){window.scrollTo({top:0,behavior:'smooth'});return}
  if(b.id==='copy'){copy(asText());return}
@@ -588,11 +601,11 @@ document.addEventListener('click',function(e){
  if(b.id==='clear'){if(confirm('Clear all your picks and notes?')){S={v:{},n:{},j:{},t:0};document.querySelectorAll('textarea[data-note]').forEach(function(t){t.value='';auto(t)});save()}return}
 });
 document.getElementById('sheet').addEventListener('click',function(e){if(e.target.id==='sheet')closeSheet()});
+document.getElementById('view').addEventListener('click',function(e){if(e.target.id==='view')closeView()});
 document.getElementById('showJ').addEventListener('change',function(e){document.getElementById('sheet').classList.toggle('showj',e.target.checked)});
 function copy(t){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(function(){toast('Copied')},function(){fallback(t)});else fallback(t)}
 function fallback(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{document.execCommand('copy');toast('Copied')}catch(e){}document.body.removeChild(a)}
-function barH(){document.documentElement.style.setProperty('--bar',document.getElementById('bar').offsetHeight+'px')}
-barH();window.addEventListener('resize',barH);
+
 </script>
 </body>
 </html>
