@@ -2,698 +2,597 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>Your ballot, Nov 3 2026 (Utah County)</title>
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16181b" media="(prefers-color-scheme: dark)">
+<title>Your ballot, Nov 3 2026</title>
 <style>
 :root{
-  --bg:#fbfaf7; --card:#fff; --ink:#1f2328; --muted:#5d636b; --line:#e3e0d8;
-  --accent:#2f6f5e; --accent-soft:#e6f1ed; --warn:#8a5a00; --warn-soft:#fdf3dc;
-  --r:#b2483f; --d:#2f5fa7; --o:#6b6b6b; --jaden:#6a4c93; --jaden-soft:#f1ecf8;
-  --radius:12px;
+  --bg:#fbfaf7; --card:#fff; --ink:#1f2328; --muted:#62686f; --line:#e4e1d9; --soft:#f3f1ec;
+  --accent:#2f6f5e; --accent-soft:#e3f0eb; --warn:#7a4f00; --warn-soft:#fdf1d6;
+  --r:#b2483f; --d:#2f5fa7; --o:#7a6a9a; --jaden:#6a4c93; --jaden-soft:#f1ecf8;
+  --radius:14px; --bar:104px;
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#16181b; --card:#1e2125; --ink:#e7e5e0; --muted:#a3a7ad; --line:#33373d;
-    --accent:#6cc2a6; --accent-soft:#1f3a32; --warn:#f0c060; --warn-soft:#3a2f17;
-    --r:#e5847b; --d:#86aef0; --o:#a0a0a0; --jaden:#c3a6ef; --jaden-soft:#2b2338;
+    --bg:#16181b; --card:#1f2226; --ink:#ebe9e4; --muted:#a3a8ae; --line:#34383e; --soft:#262a2f;
+    --accent:#6cc2a6; --accent-soft:#1d3730; --warn:#f2c46a; --warn-soft:#3a2f17;
+    --r:#e8877e; --d:#89b0f2; --o:#b9a6dc; --jaden:#c6aaf0; --jaden-soft:#2b2338;
   }
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:16px 16px 80px}
-h1{font-size:1.6rem;line-height:1.2;margin:8px 0 4px}
-h2{font-size:1.15rem;margin:28px 0 8px}
-h3{font-size:1rem;margin:14px 0 4px}
-p{margin:6px 0}
-ul{margin:4px 0;padding-left:20px}
-li{margin:3px 0}
-.muted{color:var(--muted)}
-.small{font-size:.88rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.45 -apple-system,system-ui,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:12px 14px calc(96px + env(safe-area-inset-bottom))}
+h1{font-size:1.5rem;line-height:1.15;margin:6px 0 2px}
+h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 2px 6px}
+p{margin:6px 0} ul{margin:4px 0;padding-left:20px} li{margin:3px 0}
 a{color:var(--accent)}
-.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin:10px 0}
-.box.warn{background:var(--warn-soft);border-color:transparent}
-.box.warn b{color:var(--warn)}
-/* details */
-details{border-radius:var(--radius)}
-summary{cursor:pointer;list-style:none;position:relative;padding-right:28px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:4px;top:0;font-weight:600;color:var(--muted);font-size:1.2rem;line-height:1.3}
-details[open]>summary::after{content:"\2212"}
-details.race{background:var(--card);border:1px solid var(--line);margin:12px 0;padding:0}
-details.race>summary{padding:14px 40px 14px 14px}
-details.race>summary::after{right:14px;top:14px}
-details.race>.body{padding:0 14px 14px}
-.race-title{font-weight:700;font-size:1.05rem}
-.race-what{color:var(--muted);font-size:.92rem;margin-top:2px}
-.pills{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
-.pill{font-size:.82rem;border:1px solid var(--line);border-radius:999px;padding:2px 9px;white-space:nowrap}
-.tag{font-size:.72rem;font-weight:700;letter-spacing:.03em;border-radius:4px;padding:1px 5px;margin-left:4px;vertical-align:1px;color:#fff}
-.tag.R{background:var(--r)} .tag.D{background:var(--d)} .tag.O{background:var(--o)}
-@media (prefers-color-scheme: dark){.tag{color:#111}}
-details.cand{border-top:1px solid var(--line);border-radius:0;padding:10px 0}
-details.cand>summary .name{font-weight:650}
-details.cand>summary .gist{display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
-.cand-body{padding:6px 0 2px 10px;border-left:3px solid var(--line);margin:8px 0 0 2px}
-.issue{margin:8px 0}
-.issue .lbl{font-weight:650;font-size:.9rem}
-.issue .lbl .ico{display:inline-block;width:1.3em}
-.sides{display:grid;grid-template-columns:1fr;gap:8px;margin:8px 0}
-@media (min-width:560px){.sides{grid-template-columns:1fr 1fr}}
-.side{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.93rem}
-.side h4{margin:0 0 4px;font-size:.85rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-.check{background:var(--accent-soft);border-radius:8px;padding:6px 9px;font-size:.9rem;margin:6px 0}
-.check b{color:var(--accent)}
-details.sub{margin:8px 0}
-details.sub>summary{font-size:.92rem;font-weight:600;color:var(--muted)}
-details.sources>summary{font-size:.88rem;color:var(--muted);font-weight:600}
-details.sources ul{font-size:.88rem}
+.muted{color:var(--muted)} .small{font-size:.87rem}
 a.src::after{content:" \2197";font-size:.85em}
-details.jaden{background:var(--jaden-soft);border-radius:10px;padding:8px 10px;margin:12px 0 0}
-details.jaden>summary{color:var(--jaden);font-weight:650;font-size:.92rem}
-details.jaden p,details.jaden li{font-size:.95rem}
-table.cmp{width:100%;border-collapse:collapse;font-size:.88rem;margin:6px 0}
-table.cmp th,table.cmp td{border-top:1px solid var(--line);padding:6px 6px;text-align:left;vertical-align:top}
-table.cmp th{font-weight:650}
-table.cmp thead th{border-top:none;color:var(--muted);font-size:.8rem}
-.scroll{overflow-x:auto}
-/* lens */
-.lens{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;margin:0 -2px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;border-bottom:1px solid var(--line)}
-.lens span{font-size:.85rem;color:var(--muted);margin-right:2px}
-.lens button,.tools button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 11px;cursor:pointer}
-.lens button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
-.tools{display:flex;gap:6px;margin:8px 0 0}
-body.lens-housing [data-issue]:not([data-issue~=housing]),
-body.lens-transit [data-issue]:not([data-issue~=transit]),
-body.lens-immigration [data-issue]:not([data-issue~=immigration]){display:none}
-.why{font-size:.92rem;margin:4px 0 8px;padding:6px 9px;border-radius:8px;background:var(--accent-soft)}
-.pick{font-weight:650}
-.ico{font-style:normal}
-footer{margin-top:40px;font-size:.85rem;color:var(--muted)}
+summary{cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+button{font:inherit;color:inherit;cursor:pointer}
+.tag{font-size:.68rem;font-weight:700;letter-spacing:.02em;border-radius:4px;padding:1px 5px;margin-left:4px;vertical-align:1px;color:#fff;background:var(--o);white-space:nowrap}
+.tag.R{background:var(--r)} .tag.D{background:var(--d)}
+@media (prefers-color-scheme: dark){.tag{color:#111}}
+
+/* go card */
+.go{background:var(--warn-soft);border-radius:var(--radius);padding:12px 14px;margin:10px 0}
+.go b{color:var(--warn)}
+.go .main{font-size:1.02rem}
+.go .bring{font-size:.93rem;margin-top:4px}
+.go-links{display:flex;gap:16px;margin-top:6px;font-size:.92rem}
+details.more>summary{font-size:.9rem;font-weight:600;color:var(--muted);padding:6px 0}
+details.more>summary::before{content:"\25B8  "}
+details.more[open]>summary::before{content:"\25BE  "}
+.go details.more>summary{color:var(--warn)}
+
+/* sticky bar */
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);margin:0 -14px;padding:8px 14px;border-bottom:1px solid var(--line)}
+@supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){.bar,.bottom{background:color-mix(in srgb,var(--bg) 96%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
+.bar-row{display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.bar-row::-webkit-scrollbar{display:none}
+.bar-row+.bar-row{margin-top:6px}
+.bar-lbl{font-size:.75rem;color:var(--muted);flex:none;width:42px}
+.seg{display:flex;background:var(--soft);border-radius:10px;padding:2px;flex:1}
+.seg button{flex:1;border:0;background:transparent;border-radius:8px;padding:6px 8px;font-size:.86rem;min-height:34px}
+.seg button[aria-pressed=true]{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.15);font-weight:600}
+.chips{justify-content:space-between}
+.chip .ico{font-style:normal}
+@media (max-width:380px){.chip .ico{display:none}.chip{padding:5px 9px}}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 10px;font-size:.84rem;min-height:34px;white-space:nowrap}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
+.lensnote{display:none;font-size:.88rem;background:var(--accent-soft);border-radius:10px;padding:8px 10px;margin:10px 0}
+body[data-lens] .lensnote{display:block}
+.lensnote button{border:0;background:none;color:var(--accent);text-decoration:underline;padding:0}
+
+/* race card */
+details.race{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin:10px 0;scroll-margin-top:calc(var(--bar) + 8px)}
+details.race.star{border:2px solid var(--accent)}
+details.race>summary{padding:13px 40px 12px 14px;position:relative}
+details.race>summary::after{content:"";position:absolute;right:17px;top:19px;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .15s}
+details.race[open]>summary::after{transform:rotate(-135deg);top:23px}
+.flag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:3px}
+.rt{font-weight:700;font-size:1.04rem;line-height:1.25}
+.rs{color:var(--muted);font-size:.92rem;margin-top:1px}
+.ask{font-size:.92rem;margin-top:6px}
+.pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.pill{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.pill.mine{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
+.pill.mine:empty{display:none}
+.race .body{padding:0 14px 14px}
+.why{font-size:.95rem;padding:8px 10px;border-radius:10px;background:var(--soft);margin:0 0 4px}
+
+/* compare grid */
+.cmp{margin:10px 0 4px}
+.cells{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:8px}
+.cmp-head{position:sticky;top:var(--bar);z-index:5;background:var(--card);padding:6px 0;border-bottom:1px solid var(--line)}
+.cell{border-left:3px solid var(--pc,var(--line));padding:1px 0 1px 7px;font-size:.9rem;line-height:1.3;min-width:0;overflow-wrap:anywhere}
+.cell.head{font-weight:700;font-size:.9rem}
+.cell.head .sub{display:block;font-weight:400;color:var(--muted);font-size:.78rem}
+.row{border-bottom:1px solid var(--line)}
+.row>summary,.row>.static{padding:9px 22px 9px 0;position:relative;display:block}
+.row>summary::after{content:"+";position:absolute;right:2px;top:7px;color:var(--muted);font-weight:600;font-size:1.05rem}
+.row[open]>summary::after{content:"\2212"}
+.row[open]>summary{background:var(--soft);border-radius:8px;margin:0 -6px;padding-left:6px;padding-right:28px}
+.rowlabel{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;font-weight:600}
+.rowmore{padding:4px 0 12px}
+.pm{border-left:3px solid var(--pc);padding:2px 0 2px 10px;margin:10px 0;font-size:.95rem}
+.pm .pmn{font-weight:700;font-size:.85rem;margin-bottom:2px}
+.check{background:var(--accent-soft);border-radius:8px;padding:7px 10px;font-size:.9rem;margin:8px 0}
+.check b{color:var(--accent)}
+.hint{font-size:.8rem;color:var(--muted);margin:4px 0 0}
+
+/* vote */
+.vote{margin:14px 0 4px;padding:12px;border-radius:12px;background:var(--accent-soft)}
+.vh{font-weight:700;font-size:.95rem;margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline}
+.vh .saved{font-weight:400;font-size:.8rem;color:var(--accent)}
+.opts{display:grid;gap:6px}
+.opt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:10px 12px;min-height:46px;font-size:.98rem}
+.opt .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--muted)}
+.opt[aria-pressed=true]{border-color:var(--accent);font-weight:650}
+.opt[aria-pressed=true] .dot{border-color:var(--accent);background:radial-gradient(var(--accent) 45%,transparent 50%)}
+textarea{display:block;width:100%;margin-top:8px;font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--card);color:var(--ink);resize:none;min-height:44px;overflow:hidden}
+textarea:focus{outline:none;border-color:var(--accent)}
+
+/* judges */
+.jt{width:100%;border-collapse:collapse;font-size:.9rem}
+.jt td{padding:7px 4px;border-top:1px solid var(--line);vertical-align:middle}
+.jt .pct{color:var(--muted);text-align:right}
+.yn{display:flex;gap:4px;justify-content:flex-end}
+.yn button{border:1.5px solid var(--line);background:var(--card);border-radius:8px;min-width:46px;min-height:38px;font-size:.85rem}
+.yn button[aria-pressed=true][data-j=y]{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:700}
+.yn button[aria-pressed=true][data-j=n]{background:var(--r);border-color:var(--r);color:var(--bg);font-weight:700}
+.jtools{display:flex;gap:8px;margin:10px 0 4px}
+.jtools button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;min-height:36px;font-size:.85rem}
+
+/* people's takes */
+details.take{background:var(--jaden-soft);border-radius:10px;padding:2px 12px;margin:8px 0 0}
+details.take>summary{color:var(--jaden);font-weight:650;font-size:.9rem;padding:9px 0}
+details.take>summary::before{content:"\25B8  "} details.take[open]>summary::before{content:"\25BE  "}
+details.take p{font-size:.95rem}
+details.srcs>summary{font-size:.85rem;color:var(--muted);font-weight:600;padding:9px 0 2px}
+details.srcs ul{font-size:.88rem}
+
+/* bottom bar + sheet */
+.bottom{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line);display:flex;gap:8px;justify-content:center}
+.bottom button{border:0;border-radius:12px;min-height:46px;padding:0 16px;font-size:.98rem}
+#openSheet{flex:1;max-width:520px;background:var(--accent);color:var(--bg);font-weight:650}
+#toTop{background:var(--soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(72px + env(safe-area-inset-bottom));background:var(--ink);color:var(--bg);font-size:.85rem;padding:6px 12px;border-radius:999px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:60}
+.toast.on{opacity:.92}
+.sheet{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);display:none}
+.sheet.on{display:block}
+.sheet .panel{position:absolute;left:0;right:0;bottom:0;max-height:92vh;max-height:92dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:var(--bg);border-radius:18px 18px 0 0;padding:6px 16px calc(20px + env(safe-area-inset-bottom));max-width:760px;margin:0 auto}
+.grab{width:40px;height:5px;border-radius:3px;background:var(--line);margin:6px auto 8px}
+.sheet h3{margin:4px 0 2px;font-size:1.2rem}
+.sheet .acts{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+.sheet .acts button{border:1px solid var(--line);background:var(--card);border-radius:10px;min-height:42px;padding:0 12px;font-size:.92rem}
+.sheet .acts .primary{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:650}
+.bl{list-style:none;padding:0;margin:0}
+.bl li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.bl .k{flex:1;min-width:0}
+.bl .rn{font-size:.8rem;color:var(--muted)}
+.bl .pk{font-weight:650}
+.bl .pk.none{color:var(--muted);font-weight:400}
+.bl .nt{font-size:.88rem;color:var(--muted);white-space:pre-wrap}
+.bl .jp{display:none;font-size:.85rem;color:var(--jaden)}
+.sheet.showj .bl .jp{display:block}
+.bl button{flex:none;border:1px solid var(--line);background:var(--card);border-radius:8px;min-height:36px;padding:0 10px;font-size:.85rem}
+.bl li.side{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:14px 0 2px;border:0;display:block}
+.jsw{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--jaden);margin:8px 0}
+.jsw input{width:20px;height:20px;accent-color:var(--jaden)}
+footer{margin-top:30px;font-size:.84rem;color:var(--muted)}
+body.sheet-open{overflow:hidden}
 </style>
 </head>
 <body>
 <main>
-
 <h1>Your ballot, today</h1>
-<p class="muted">Utah County general election, Tuesday Nov 3, 2026. Built for Alena by Jaden. Comes down tonight.</p>
+<p class="muted small">Utah County, Nov 3 2026. Made for Alena by Jaden. Comes down tonight.</p>
 
-<div class="box warn">
-  <p><b>Where to go: Provo Health and Justice Building</b><br>151 S University Ave, Provo (the county building downtown). Open until <b>8 p.m.</b> Get in line before 8 and they have to let you vote.</p>
-  <p><a class="src" href="https://maps.google.com/?q=151+S+University+Ave,+Provo,+UT+84601" target="_blank" rel="noopener">Open in Maps</a></p>
-  <p>You can register and vote there in one visit. Tell them you need to <b>register and vote today</b>. You'll fill out a <b>provisional ballot</b>, which doubles as your registration and gets counted once the county confirms you're eligible.</p>
-  <p><b>Bring:</b></p>
-  <ul>
-    <li><b>Photo ID</b>: driver license, state ID, or passport.</li>
-    <li><b>Proof you live here</b>, if your ID shows a different address: anything with your name and this address, like a bank statement, pay stub, lease, utility bill, or government mail. A screenshot of an online statement on your phone may be accepted, but paper is safer.</li>
-  </ul>
-  <p class="small">Forgot something? Vote anyway. You'll have until next Monday to bring the missing ID to the county clerk.</p>
-  <p class="small"><b>The library won't work</b>: Provo City Library has a drop box only, for people who already have a ballot. If the Health and Justice Building is inconvenient, Provo Legacy Village (4146 N University Ave) is the other Provo vote center, same hours and same rules.</p>
-  <p class="small">Official list: <a class="src" href="https://vote.utahcounty.gov/voting-locations" target="_blank" rel="noopener">vote.utahcounty.gov</a> &middot; Questions: (801) 851-VOTE (8683)</p>
+<div class="go">
+  <div class="main">&#128205; <b>By 8 p.m.:</b> register and vote at the <b>Health and Justice Building</b>, 151 S University Ave.</div>
+  <div class="bring">Bring a photo ID and something with your name and this address on it.</div>
+  <div class="go-links"><a class="src" href="https://maps.apple.com/?q=151+S+University+Ave,+Provo,+UT+84601" target="_blank" rel="noopener">Directions</a><a href="tel:+18018518683">Call the county</a></div>
+  <details class="more"><summary>Details</summary>
+    <p>Tell them you need to <b>register and vote today</b>. You'll fill out a <b>provisional ballot</b>, which doubles as your registration and gets counted once the county confirms you're eligible. If you're in line before 8 p.m., you get to vote.</p>
+    <p><b>Photo ID:</b> driver license, state ID, or passport.</p>
+    <p><b>Proof you live here</b> (if your ID shows another address): a bank statement, pay stub, lease, utility bill, or government mail with your name and this address. Paper is safer than a screenshot.</p>
+    <p class="small">Forgot something? Vote anyway; you'll have until next Monday to bring it to the county clerk.</p>
+    <p class="small"><b>Not the library:</b> Provo City Library only has a drop box for people who already have a ballot. Backup vote center: Provo Legacy Village, 4146 N University Ave, same hours.</p>
+    <p class="small"><a class="src" href="https://vote.utahcounty.gov/voting-locations" target="_blank" rel="noopener">County voting locations</a> &middot; (801) 851-VOTE</p>
+  </details>
 </div>
 
-<details class="box sub">
-  <summary>How to use this page</summary>
-  <p class="small">Everything starts folded. Tap a race to open it, then tap a candidate to see more. Each layer adds detail; you can stop at any level.</p>
-  <p class="small">Use the <b>Focus</b> buttons to show only what candidates say about housing, transit, or immigration.</p>
-  <p class="small">Each candidate gets the case their <b>supporters</b> would make and the case their <b>critics</b> would make, in their own terms. A green <b>Fact check</b> box flags claims that don't hold up.</p>
-  <p class="small">Links marked &#8599; open the original article or source in a new tab. You never need them; the summary comes first.</p>
-  <p class="small">Jaden's own picks are in the purple <b>Jaden's pick</b> boxes. They stay folded unless you open them.</p>
-  <p class="small">Your ballot will be the same as Jaden's, since you live at the same address. The races below are in the order they matter for your issues, not ballot order.</p>
-</details>
+<p class="small muted">Tap anything to go deeper. Pick your votes as you read; they save on this phone, and <b>My ballot</b> at the bottom collects them in ballot order.</p>
 
-<div class="lens" role="toolbar" aria-label="Focus on an issue">
-  <span>Focus:</span>
-  <button type="button" data-lens="" aria-pressed="true">Everything</button>
-  <button type="button" data-lens="housing" aria-pressed="false"><i class="ico">&#127968;</i> Housing</button>
-  <button type="button" data-lens="transit" aria-pressed="false"><i class="ico">&#128652;</i> Transit</button>
-  <button type="button" data-lens="immigration" aria-pressed="false"><i class="ico">&#127758;</i> Immigration</button>
-</div>
-<div class="tools">
-  <button type="button" id="openAll">Open all races</button>
-  <button type="button" id="closeAll">Fold everything</button>
-</div>
-
-<h2>The races that matter most for your issues</h2>
-
-<!-- ============ US HOUSE ============ -->
-<details class="race" id="house">
-<summary>
-  <div class="race-title">U.S. House, District 3</div>
-  <div class="race-what">Your one vote in Congress. This is where national immigration law, ICE funding, and federal housing money get decided.</div>
-  <div class="pills"><span class="pill">Celeste Maloy <span class="tag R">R</span></span><span class="pill">Kent Udell <span class="tag D">D</span></span><span class="pill">4 others</span></div>
-</summary>
-<div class="body">
-  <p class="why" data-issue="immigration">Immigration is federal. This is the only race on your ballot that directly votes on ICE, deportation policy, and legal immigration.</p>
-  <p class="small muted">Maloy is heavily favored: the district leans Republican by 20+ points. A vote here still counts toward which party controls the House.</p>
-
-  <details class="cand">
-    <summary><span class="name">Celeste Maloy</span> <span class="tag R">R</span> <span class="small muted">incumbent</span>
-      <span class="gist">In Congress since 2023. Tax cuts, state control of land and water, pro-energy.</span></summary>
-    <div class="cand-body">
-      <h3>Core pitch</h3>
-      <p>Former staffer for the congressman she replaced. Only Utahn on the House Appropriations Committee, which writes federal spending. Wants Utahns to "keep as much of their own money in their own pockets as possible." Supports nuclear power and light-touch AI rules; says data centers are a local decision.</p>
-
-      <div class="issue" data-issue="housing">
-        <div class="lbl"><i class="ico">&#127968;</i> Housing</div>
-        <p>Voted for the ROAD to Housing Act, which she says "cuts a lot of the red tape that drives up the cost of housing." It passed 358 to 32, so almost everyone voted for it.</p>
-        <p>Her affordability answer is tax cuts: no tax on tips or overtime, and keeping the 2017 tax cuts permanent.</p>
-      </div>
-      <div class="issue" data-issue="transit">
-        <div class="lbl"><i class="ico">&#128652;</i> Transit</div>
-        <p>No stated position found.</p>
-      </div>
-      <div class="issue" data-issue="immigration">
-        <div class="lbl"><i class="ico">&#127758;</i> Immigration</div>
-        <p>Her votes, checked on the House roll calls:</p>
-        <ul>
-          <li><b>Laken Riley Act (Jan 2025): Yes.</b> Requires ICE to detain undocumented people who are <i>charged with</i> (not convicted of) theft, burglary, or shoplifting.</li>
-          <li><b>One Big Beautiful Bill Act (May and July 2025): Yes both times.</b> Includes about $170 billion for immigration and border enforcement, including about $45 billion for immigrant detention.</li>
-        </ul>
-      </div>
-
-      <h3>Record</h3>
-      <ul>
-        <li>Missed 1.6% of votes (Nov 2023 to Jul 2026), about average.</li>
-        <li>The same Big Beautiful Bill also cut Medicaid and SNAP. The Congressional Budget Office estimated about 10 million more people uninsured by 2034.</li>
-        <li>Supported Trump's shrinking of Bears Ears and Grand Staircase national monuments.</li>
-      </ul>
-
-      <div class="sides">
-        <div class="side"><h4>Supporters say</h4>She's experienced and sits on the committee that controls federal money, which matters for Utah's water and the Great Salt Lake. Tax cuts help families directly. Enforcing immigration law and detaining people arrested for crimes is basic public safety.</div>
-        <div class="side"><h4>Critics say</h4>She voted for a huge expansion of ICE detention, including people only charged with minor crimes, and for Medicaid cuts that hit working families. Udell says she sued to keep Utah's old congressional map.</div>
-      </div>
-      <div class="check"><b>Fact check:</b> The Laken Riley Act does apply to people <i>charged</i> or <i>arrested</i>, not only convicted. Supporters and critics agree on that; they disagree on whether it's fair.</div>
-
-      <details class="sources"><summary>Original sources</summary><ul>
-        <li><a class="src" href="https://clerk.house.gov/evs/2025/roll006.xml" target="_blank" rel="noopener">House roll call: Laken Riley Act</a></li>
-        <li><a class="src" href="https://clerk.house.gov/evs/2025/roll190.xml" target="_blank" rel="noopener">House roll call: Big Beautiful Bill final vote</a></li>
-        <li><a class="src" href="https://www.deseret.com/politics/2026/10/24/what-to-know-about-the-candidates-running-for-utahs-3rd-congressional-district/" target="_blank" rel="noopener">Deseret News: what to know about the candidates</a></li>
-        <li><a class="src" href="https://www.sltrib.com/news/politics/2026/10/03/celeste-maloy-kent-udell-split/" target="_blank" rel="noopener">Salt Lake Tribune: debate recap</a></li>
-        <li><a class="src" href="https://www.govtrack.us/congress/members/celeste_maloy/456956" target="_blank" rel="noopener">GovTrack: Maloy's record</a></li>
-      </ul></details>
+<div class="bar" id="bar">
+  <div class="bar-row">
+    <div class="seg" role="group" aria-label="How much to show">
+      <button type="button" data-depth="overview" aria-pressed="true">Overview</button>
+      <button type="button" data-depth="compare" aria-pressed="false">Compare</button>
+      <button type="button" data-depth="deep" aria-pressed="false">Everything</button>
     </div>
-  </details>
-
-  <details class="cand">
-    <summary><span class="name">Kent Udell</span> <span class="tag D">D</span>
-      <span class="gist">Retired engineering professor, first run for office. Cost of living, water, anti-corruption.</span></summary>
-    <div class="cand-body">
-      <h3>Core pitch</h3>
-      <p>Born in Lehi, raised in a big Latter-day Saint family, mechanical engineer, later a professor at UC Berkeley and the University of Utah. Lives near Moab. Takes no corporate PAC money. "I'm not a career politician nor a lawyer."</p>
-
-      <div class="issue" data-issue="housing">
-        <div class="lbl"><i class="ico">&#127968;</i> Housing</div>
-        <p>Supports "building starter homes in communities with access to family-friendly resources such as good schools, parks and churches," paid for with state, city and federal grants. "We need to get people out of the basement and into their homes."</p>
-        <p>His affordability answer: tax reform where high earners pay more, plus lower health care costs.</p>
-      </div>
-      <div class="issue" data-issue="transit">
-        <div class="lbl"><i class="ico">&#128652;</i> Transit</div>
-        <p>No stated position found.</p>
-      </div>
-      <div class="issue" data-issue="immigration">
-        <div class="lbl"><i class="ico">&#127758;</i> Immigration</div>
-        <p>"Our immigration system is broken, but cruelty, chaos, and political theater are not solutions. We need lawful, humane, and workable policies that respect the rule of law, treat people with dignity, and support communities, employers, and border states."</p>
-        <p>Stresses the 4th Amendment (protection from unreasonable searches) and supports "serious legislative reform." No specific bill or plan.</p>
-      </div>
-
-      <h3>Record</h3>
-      <p>No voting record; he's never held office.</p>
-
-      <h3>Other positions</h3>
-      <ul>
-        <li>Health care: expand programs like Medicare "to be accessible to all."</li>
-        <li>Wants a moratorium on new data centers in Utah.</li>
-        <li>Skeptical of nuclear: "We have not shown that they're safe."</li>
-        <li>Wants Bears Ears and Grand Staircase restored and set by law.</li>
-      </ul>
-      <div class="check"><b>Fact check:</b> On safety, the data says otherwise: nuclear causes about as few deaths per unit of electricity as wind and solar, far fewer than coal or gas. His other claim, that new nuclear is expensive, is fair: the last U.S. plant built (Vogtle, Georgia) went years late and billions over budget.</div>
-
-      <div class="sides">
-        <div class="side"><h4>Supporters say</h4>A scientist who follows evidence, no corporate money. Would vote with Democrats on immigration, health care and taxes, which is the side that would block mass detention and Medicaid cuts.</div>
-        <div class="side"><h4>Critics say</h4>No political experience, and few concrete plans on housing or immigration. Wants to block data centers and doubts nuclear, which cuts against cheaper, more reliable power. Lives near Moab, far from Utah County.</div>
-      </div>
-
-      <details class="sources"><summary>Original sources</summary><ul>
-        <li><a class="src" href="https://kentudellforcongress.com/" target="_blank" rel="noopener">Udell's campaign site (issues)</a></li>
-        <li><a class="src" href="https://www.kuer.org/politics-government/2026-10-02/3rd-congressional-debate-recap-celeste-maloy-kent-udell-public-lands-nuclear-power-affordability" target="_blank" rel="noopener">KUER: debate recap</a></li>
-        <li><a class="src" href="https://ourworldindata.org/safest-sources-of-energy" target="_blank" rel="noopener">Our World in Data: deaths per unit of energy</a></li>
-      </ul></details>
-    </div>
-  </details>
-
-  <details class="cand">
-    <summary><span class="name">Four others</span>
-      <span class="gist">Easley (Constitution), Stoddard (Libertarian), Scott and Hooslyn (unaffiliated).</span></summary>
-    <div class="cand-body"><p>No news coverage found for any of them. None is expected to get more than a few percent.</p></div>
-  </details>
-
-  <details class="sub" data-issue="housing transit immigration"><summary>Side by side</summary>
-    <div class="scroll"><table class="cmp">
-      <thead><tr><th></th><th>Maloy <span class="tag R">R</span></th><th>Udell <span class="tag D">D</span></th></tr></thead>
-      <tr data-issue="housing"><th>Housing</th><td>Cut red tape (voted for the near-unanimous ROAD Act); tax cuts</td><td>Grants for starter homes; higher taxes on high earners</td></tr>
-      <tr data-issue="transit"><th>Transit</th><td>Nothing stated</td><td>Nothing stated</td></tr>
-      <tr data-issue="immigration"><th>Immigration</th><td>Voted for expanded ICE detention and funding</td><td>"Lawful, humane, and workable"; no specific plan</td></tr>
-      <tr><th>Record</th><td>3 years in Congress</td><td>None</td></tr>
-    </table></div>
-  </details>
-
-  <details class="jaden"><summary>Jaden's pick</summary>
-    <p class="pick">Udell.</p>
-    <p>I was torn. Maloy's actually better than him on the energy stuff I care about (she's pro-nuclear, he wants to ban data centers). But a House vote mostly counts through which party runs the House, and I want the party that won't fund mass ICE detention. National Democrats are pro-nuclear anyway, even if he isn't.</p>
-  </details>
-</div>
-</details>
-
-<!-- ============ STATE HOUSE 62 ============ -->
-<details class="race" id="hd62">
-<summary>
-  <div class="race-title">Utah House, District 62 (Provo &amp; Springville)</div>
-  <div class="race-what">The Legislature writes Utah's rules on zoning, renters, UTA, and in-state tuition. Probably the race that matters most for housing.</div>
-  <div class="pills"><span class="pill">Norm Thurston <span class="tag R">R</span></span><span class="pill">David Chappell <span class="tag D">D</span></span></div>
-</summary>
-<div class="body">
-  <p class="why" data-issue="housing">State law decides what cities are allowed to require: parking minimums, lot sizes, how many roommates can share a house.</p>
-  <p class="why" data-issue="immigration">The Legislature decides things like in-state tuition for undocumented students and driving privilege cards.</p>
-  <p class="why" data-issue="transit">The Legislature controls UTA's leadership and much of its money.</p>
-
-  <details class="cand">
-    <summary><span class="name">Norm Thurston</span> <span class="tag R">R</span> <span class="small muted">incumbent</span>
-      <span class="gist">In the House since 2015. Economist. Tax cuts, health-cost bills, "local control" on zoning.</span></summary>
-    <div class="cand-body">
-      <h3>Core pitch</h3>
-      <p>Princeton PhD economist and former state health-data official. Known for bills on drug prices, insulin access, and Utah's 0.05 DUI limit. Has voted for Utah's income tax cuts. On housing he favors local decisions: "the best solutions for Provo and Springville are not found in top-down mandates."</p>
-
-      <div class="issue" data-issue="housing">
-        <div class="lbl"><i class="ico">&#127968;</i> Housing</div>
-        <p>Says he supports policies that increase local housing supply. His votes on the contested housing bills mostly went the other way:</p>
-        <ul>
-          <li><b>No</b> on SB 181 (2025): stops cities from requiring garages on affordable owner-occupied homes and from oversized parking rules. Passed 50-20.</li>
-          <li><b>No</b> on HB 492 (2026): state loans to cities for the pipes and roads that new housing needs. Passed 61-8.</li>
-          <li><b>No</b> on HCR 6 (2026): support for Utah's housing plan. Passed 41-26.</li>
-          <li><b>No</b> on HB 119 (2025): stops HOAs from banning solar panels outright.</li>
-        </ul>
-      </div>
-      <div class="issue" data-issue="transit">
-        <div class="lbl"><i class="ico">&#128652;</i> Transit</div>
-        <ul>
-          <li><b>No</b> on SB 26 (2025): funding for housing and businesses built around train stations. He was one of only 5 no votes. (The bill also included a convention-center zone, which may be what he objected to.)</li>
-          <li><b>Yes</b> on SB 197 (2026): reorganizes UTA so the governor appoints its director. Passed 65-2, so not a dividing line.</li>
-        </ul>
-      </div>
-      <div class="issue" data-issue="immigration">
-        <div class="lbl"><i class="ico">&#127758;</i> Immigration</div>
-        <ul>
-          <li><b>No, twice,</b> on HB 386 (2026) after it was rewritten to bar undocumented immigrants from in-state college tuition, some home-loan programs, and some professional licenses. It passed the House 39-33, unusually close, then died before the Senate voted. The sponsor was a Provo Republican; Thurston broke with her.</li>
-          <li><b>Yes</b> on HB 136 (2026): police must impound the car of anyone driving without a license, permit, or driving privilege card (the card undocumented immigrants can get). Getting the car back costs a $600 fee plus towing, and someone with a valid license has to pick it up. Passed 55-12.</li>
-          <li><b>Yes</b> on SB 31 (2025): created a state Refugee Services Office. Passed 67-7.</li>
-        </ul>
-      </div>
-
-      <h3>Other record</h3>
-      <ul>
-        <li>Voted to put <b>Amendment B</b> on this ballot (the 60% rule for tax initiatives), and for every contested bill tightening petition rules.</li>
-        <li>Declined to say how he'd vote on Amendments A and B.</li>
-        <li>Even Chappell credits his health-cost work (insulin access, drug-price transparency).</li>
-      </ul>
-
-      <div class="sides">
-        <div class="side"><h4>Supporters say</h4>A serious policy economist with 11 years of experience who reads the bills. Cut taxes, lowered drug costs, and resisted his own party on the in-state tuition ban. Thinks Provo should decide Provo's zoning, not Salt Lake.</div>
-        <div class="side"><h4>Critics say</h4>Voted against the state's main tools to make housing cheaper (parking rules, housing infrastructure, transit-area housing). Voted to make citizen initiatives harder. Backed the car impound law that hits immigrant drivers hard.</div>
-      </div>
-
-      <details class="sources"><summary>Original sources</summary><ul>
-        <li><a class="src" href="https://www.ksl.com/article/51455044/utahns-first-or-eroding-the-utah-way-house-oks-measure-cracking-down-on-illegal-immigration" target="_blank" rel="noopener">KSL: HB 386 House vote</a></li>
-        <li><a class="src" href="https://le.utah.gov/Session/2026/bills/enrolled/HB0136.pdf" target="_blank" rel="noopener">HB 136 (2026) final text</a></li>
-        <li><a class="src" href="https://le.utah.gov/Session/2025/bills/enrolled/SB0181.pdf" target="_blank" rel="noopener">SB 181 (2025) final text</a></li>
-        <li><a class="src" href="https://www.sltrib.com/news/politics/2026/10/12/norm-thurston-faces-david-chappell/" target="_blank" rel="noopener">Salt Lake Tribune: Thurston vs. Chappell</a></li>
-        <li><a class="src" href="https://www.normthurston.com/?p=2473" target="_blank" rel="noopener">Thurston: his debate statements</a></li>
-        <li class="muted">Vote tallies pulled from the Legislature's roll calls (le.utah.gov).</li>
-      </ul></details>
-    </div>
-  </details>
-
-  <details class="cand">
-    <summary><span class="name">David Chappell</span> <span class="tag D">D</span>
-      <span class="gist">BYU civil engineer, first run. Renter protections, small-scale housing, abolish ICE.</span></summary>
-    <div class="cand-body">
-      <h3>Core pitch</h3>
-      <p>Co-founded BYU's Cougar Pride Center. Running on cost of living: cut sales tax on groceries and essentials, free school meals, renter and worker protections. Says his plan has no tax increases. Opposes Amendment B. Refuses corporate money.</p>
-
-      <div class="issue" data-issue="housing">
-        <div class="lbl"><i class="ico">&#127968;</i> Housing</div>
-        <ul>
-          <li>Low-interest state loans so regular homeowners can add a unit (an attic, a backyard cottage) and sell it.</li>
-          <li>Make it easier to turn houses into duplexes. Replace limits on how many unrelated people can share a house with health-and-safety standards.</li>
-          <li><b>Not</b> high-rises: "My plan is about small additions, not high-rises." Against "lifeless townhomes" built by big developers.</li>
-          <li>Renters: ban application fees, cap deposits at 2 months' rent, give a week instead of 3 days to move after an eviction notice, keep first evictions off your record, and require landlords to justify rent increases, with a state office to appeal to.</li>
-        </ul>
-      </div>
-      <div class="issue" data-issue="transit">
-        <div class="lbl"><i class="ico">&#128652;</i> Transit</div>
-        <p>Nothing in his platform. His site argues the state's recent income tax cuts could have paid for fare-free UTA (buses, TRAX, FrontRunner) many times over, but he doesn't promise it.</p>
-      </div>
-      <div class="issue" data-issue="immigration">
-        <div class="lbl"><i class="ico">&#127758;</i> Immigration</div>
-        <p>"Immigration and Customs Enforcement (ICE) should be abolished." Says immigration violations are civil matters for civil courts, and "I will do everything in my power as a state legislator to protect Utahns from ICE."</p>
-        <div class="check"><b>Fact check:</b> He says "ICE has killed hundreds of people since it was created in 2003." More than 200 people have died in ICE custody since 2003 by ICE's own reports, but most deaths are recorded as medical causes or suicide; critics blame poor care. "Killed" is his framing. Also, a state legislator can't abolish ICE (that's Congress). He could limit how much Utah helps it.</div>
-      </div>
-
-      <h3>Record</h3>
-      <p>No voting record; he's never held office.</p>
-      <p class="small">Other: says data centers "should not be built in Utah." Wants ranked-choice voting and an independent commission to draw maps.</p>
-
-      <div class="sides">
-        <div class="side"><h4>Supporters say</h4>The most detailed renter-protection plan on the ballot. Lets ordinary homeowners build, not just big developers. Would protect citizen initiatives and immigrant neighbors.</div>
-        <div class="side"><h4>Critics say</h4>Making landlords justify rent increases is a step toward rent control, which economists mostly find shrinks the rental supply over time. Opposing high-rises and townhomes limits how much housing gets built. "Abolish ICE" is a position most Utah voters reject. No experience.</div>
-      </div>
-
-      <details class="sources"><summary>Original sources</summary><ul>
-        <li><a class="src" href="https://davidforutah.com/faq" target="_blank" rel="noopener">Chappell FAQ (ICE, housing, data centers)</a></li>
-        <li><a class="src" href="https://davidforutah.com/rentersandworkers" target="_blank" rel="noopener">Chappell: renters and workers</a></li>
-        <li><a class="src" href="https://davidforutah.com/cutcosts" target="_blank" rel="noopener">Chappell: cost of living plan</a></li>
-        <li><a class="src" href="https://www.heraldextra.com/news/local/2026/oct/27/david-chappell-emphasizes-listening-improving-affordability-in-campaign-for-house-district-62/" target="_blank" rel="noopener">Daily Herald: Chappell profile</a></li>
-        <li><a class="src" href="https://www.ice.gov/detain/detainee-death-reporting" target="_blank" rel="noopener">ICE: detainee death reports</a></li>
-      </ul></details>
-    </div>
-  </details>
-
-  <details class="sub" data-issue="housing transit immigration"><summary>Side by side</summary>
-    <div class="scroll"><table class="cmp">
-      <thead><tr><th></th><th>Thurston <span class="tag R">R</span></th><th>Chappell <span class="tag D">D</span></th></tr></thead>
-      <tr data-issue="housing"><th>Housing</th><td>Local control; voted against state housing reforms</td><td>Small additions and duplexes, not high-rises</td></tr>
-      <tr data-issue="housing"><th>Renters</th><td>No renter bills found</td><td>Fee bans, deposit caps, rent-increase review</td></tr>
-      <tr data-issue="transit"><th>Transit</th><td>Against station-area housing funding (1 of 5)</td><td>Nothing specific</td></tr>
-      <tr data-issue="immigration"><th>Immigration</th><td>Against the in-state tuition ban; for car impounds</td><td>Abolish ICE</td></tr>
-      <tr><th>Initiatives</th><td>Voted to put Amendment B on the ballot</td><td>Opposes B</td></tr>
-      <tr><th>Record</th><td>11 years in the House</td><td>None</td></tr>
-    </table></div>
-  </details>
-
-  <details class="jaden"><summary>Jaden's pick</summary>
-    <p class="pick">Chappell.</p>
-    <p>He's better on what I care about most: zoning reform, roommate limits, making landlords compete, and protecting initiatives. Thurston voted to put Amendment B on the ballot and voted against the parking and housing bills.</p>
-    <p>Where I disagree with Chappell: I want more high-density housing, not less, and he's against data centers. Credit to Thurston for voting against the in-state tuition ban.</p>
-  </details>
-</div>
-</details>
-
-<!-- ============ AMENDMENT B ============ -->
-<details class="race" id="amendB">
-<summary>
-  <div class="race-title">Amendment B: 60% to pass tax-raising initiatives</div>
-  <div class="race-what">Should citizen-written laws that raise taxes need 60% of the vote instead of a simple majority? The contested measure on the ballot.</div>
-  <div class="pills"><span class="pill">For</span><span class="pill">Against</span></div>
-</summary>
-<div class="body">
-  <details class="sub"><summary>What's an initiative?</summary>
-    <p class="small">A law that regular people write, gather signatures for, and put on the ballot themselves, without the Legislature. In 2018 Utah voters used one to expand Medicaid (it passed with about 53%) after the Legislature wouldn't.</p>
-  </details>
-  <p><b>What it does:</b> any citizen initiative that creates a tax, raises one, or slows a scheduled tax cut would need 60% to pass. It doesn't apply to the Legislature, which can still raise taxes with a simple majority.</p>
-  <p data-issue="housing transit">Matters for you because initiatives that pay for something (health coverage, transit, housing funds) usually need a tax to do it.</p>
-
-  <div class="sides">
-    <div class="side"><h4>Supporters say</h4>Raising your neighbors' taxes should take broad agreement. Initiatives skip the vetting and budget tradeoffs that bills go through. Voters still decide; the bar is just higher. <span class="small muted">(Sen. Lincoln Fillmore, Utah Taxpayers Association, Americans for Prosperity)</span></div>
-    <div class="side"><h4>Opponents say</h4>It's the Legislature's latest attempt to weaken initiatives after voters' power was upheld in 2024. Medicaid expansion would have failed under it. And it applies retroactively to Nov 1, 2026. <span class="small muted">(Better Utah, Better Boundaries, Utah Forward Party)</span></div>
   </div>
-  <div class="check"><b>Fact check:</b> True that no 2018 initiative got 60%, so Medicaid expansion and medical marijuana both would have failed. True that the Legislature isn't held to the same bar.</div>
-
-  <details class="sources"><summary>Original sources</summary><ul>
-    <li><a class="src" href="https://www.sltrib.com/news/politics/2026/10/12/tax-raising-citizen-initiatives/" target="_blank" rel="noopener">Salt Lake Tribune: Amendment B explained</a></li>
-    <li><a class="src" href="https://www.kuer.org/politics-government/2026-10-13/election-2026-utah-amendment-a-amendment-b-guide-ballot-explainer" target="_blank" rel="noopener">KUER: A and B guide</a></li>
-    <li><a class="src" href="https://www.theutahplum.org/p/amendment-b-explained" target="_blank" rel="noopener">The Utah Plum: B explained</a></li>
-  </ul></details>
-
-  <details class="jaden"><summary>Jaden's pick</summary>
-    <p class="pick">Against.</p>
-    <p>I'm in huge support of voter initiatives, and the Legislature keeps trying to make them harder. This is the one I care most about on the whole ballot.</p>
-  </details>
-</div>
-</details>
-
-<h2>Lower stakes for your issues</h2>
-
-<!-- ============ AMENDMENT A ============ -->
-<details class="race" id="amendA">
-<summary>
-  <div class="race-title">Amendment A: how amendments get announced</div>
-  <div class="race-what">Replaces the rule that proposed amendments be printed in newspapers with 60 days of public notice set by state law. Procedural.</div>
-  <div class="pills"><span class="pill">For</span><span class="pill">Against</span></div>
-</summary>
-<div class="body">
-  <p>Two amendments were thrown off the 2024 ballot partly because the state didn't meet the newspaper rule. A 2025 law makes initiatives follow the same rule, so if A fails, initiative backers would have to pay roughly $1.4 million for newspaper notices.</p>
-  <div class="sides">
-    <div class="side"><h4>Supporters say</h4>Newspapers aren't how people get news anymore. Saves up to $1.4 million every two years and spares initiative campaigns that cost. Passed the Legislature unanimously, Democrats included.</div>
-    <div class="side"><h4>Concerns</h4>No organized opposition. The worry: the Constitution would only say "60 days, in a manner established by state law," so the Legislature could weaken the notice later without a public vote.</div>
+  <div class="bar-row chips">
+    <button type="button" class="chip" data-lens="" aria-pressed="true">All</button>
+    <button type="button" class="chip" data-lens="housing" aria-pressed="false"><i class="ico">&#127968; </i>Housing</button>
+    <button type="button" class="chip" data-lens="transit" aria-pressed="false"><i class="ico">&#128652; </i>Transit</button>
+    <button type="button" class="chip" data-lens="immigration" aria-pressed="false"><i class="ico">&#127758; </i>Immigration</button>
   </div>
-  <details class="sources"><summary>Original sources</summary><ul>
-    <li><a class="src" href="https://www.sltrib.com/news/politics/2026/10/12/amendment-proposed-change-utah/" target="_blank" rel="noopener">Salt Lake Tribune: Amendment A explained</a></li>
-    <li><a class="src" href="https://ballotpedia.org/Utah_Publication_Requirements_for_Constitutional_Amendments_Measure_(2026)" target="_blank" rel="noopener">Ballotpedia: Amendment A</a></li>
-  </ul></details>
-  <details class="jaden"><summary>Jaden's pick</summary>
-    <p class="pick">For.</p>
-    <p>It quietly helps initiatives by killing a $1.4 million bill they'd otherwise face. The risk of the Legislature weakening notice later is real but smaller.</p>
-  </details>
 </div>
-</details>
+<div class="lensnote" id="lensnote"></div>
 
-<!-- ============ COMMISSION B ============ -->
-<details class="race" id="commB">
-<summary>
-  <div class="race-title">County Commission, Seat B</div>
-  <div class="race-what">One of 3 people who run Utah County: budget, roads, the jail, and zoning outside city limits. Open seat.</div>
-  <div class="pills"><span class="pill">J. Allen <span class="tag D">D</span></span><span class="pill">David Spencer <span class="tag R">R</span></span><span class="pill">David Hinckley <span class="tag O">Forward</span></span></div>
-</summary>
-<div class="body">
-  <p class="small muted">The commission only zones land outside cities, so most Provo housing decisions are the city council's. It does set county roads and coordinates with UTA and the cities.</p>
-
-  <details class="cand">
-    <summary><span class="name">J. Allen</span> <span class="tag D">D</span>
-      <span class="gist">Retired tech executive. Wants to stop AI data centers without public support.</span></summary>
-    <div class="cand-body">
-      <p>30 years in tech, in Utah about 40 years. "I want to stop the construction of AI data centers without public support." Would vote against commissioner pay raises.</p>
-      <p data-issue="housing transit">Wants evidence-based "transportation, infrastructure and land use policies that build an affordable future." Nothing more specific.</p>
-      <p data-issue="immigration" class="muted">Immigration: nothing stated.</p>
-    </div>
-  </details>
-
-  <details class="cand">
-    <summary><span class="name">David Spencer</span> <span class="tag R">R</span>
-      <span class="gist">12 years on Orem City Council. Against high-density housing; roads and lower taxes.</span></summary>
-    <div class="cand-body">
-      <div class="issue" data-issue="housing">
-        <div class="lbl"><i class="ico">&#127968;</i> Housing</div>
-        <p>Says he passed an Orem rule that no high-density housing can be built in residential zones, and led removing 10,000+ planned apartment units from Orem's long-range plans. Voted against rezoning a farm for single-family homes, calling it a "tragedy."</p>
-      </div>
-      <div class="issue" data-issue="transit">
-        <div class="lbl"><i class="ico">&#128652;</i> Transit</div>
-        <p>Focused on roads: says the county is "approximately 15 years behind." Nothing on transit.</p>
-      </div>
-      <p>Opposed the 2019 and 2024 county property tax hikes ("It's killing the citizens").</p>
-      <div class="sides">
-        <div class="side"><h4>Supporters say</h4>Experienced, protects open space and water, keeps taxes down, and wants roads to catch up before more growth.</div>
-        <div class="side"><h4>Critics say</h4>Blocking apartments is a big reason rent is so high. The Network of Utah Moderates notes controversy over him yelling at residents and that he lost his last reelection.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="cand">
-    <summary><span class="name">David Hinckley</span> <span class="tag O">Forward</span>
-      <span class="gist">Runs a data team at a university. Housing near jobs and transit; county government reform.</span></summary>
-    <div class="cand-body">
-      <div class="issue" data-issue="housing transit">
-        <div class="lbl"><i class="ico">&#127968;</i><i class="ico">&#128652;</i> Housing and transit</div>
-        <p>Supports "housing policies that make it easier for families to live near jobs and transportation" instead of "pushing growth farther west and creating longer commutes." Wants better coordination between cities, transit agencies and the Legislature.</p>
-      </div>
-      <p>Wants to replace the 3-person commission with a 7-member council plus a professional county manager.</p>
-      <p data-issue="immigration" class="muted">Immigration: nothing stated.</p>
-      <div class="sides">
-        <div class="side"><h4>Supporters say</h4>The only candidate talking about housing near transit. A data person who wants government to work better. The Moderates "strongly" recommend him.</div>
-        <div class="side"><h4>Critics say</h4>Forward Party candidates rarely win, and he's never held office.</div>
-      </div>
-      <details class="sources"><summary>Original sources</summary><ul>
-        <li><a class="src" href="https://www.davidhinckley.com/" target="_blank" rel="noopener">Hinckley campaign site</a></li>
-        <li><a class="src" href="https://alpinehighlandtribune.com/articles/utah-county-commission-seat-b-draws-three-candidates-nov-3-mvgmobk8" target="_blank" rel="noopener">Alpine-Highland Tribune: all three candidates</a></li>
-        <li><a class="src" href="https://networkofutahmoderates.com/p/utah-voter-guide-utah-county" target="_blank" rel="noopener">Network of Utah Moderates guide</a></li>
-      </ul></details>
-    </div>
-  </details>
-
-  <details class="jaden"><summary>Jaden's pick</summary>
-    <p class="pick">Hinckley.</p>
-    <p>Housing near jobs and transit instead of sprawl, and he's a governance nerd. Spencer is the anti-apartment candidate, and Allen wants to stop data centers.</p>
-  </details>
-</div>
-</details>
-
-<!-- ============ COMMISSION A ============ -->
-<details class="race" id="commA">
-<summary>
-  <div class="race-title">County Commission, Seat A</div>
-  <div class="race-what">Same job as Seat B, different seat.</div>
-  <div class="pills"><span class="pill">Jeanne Marie Bowen <span class="tag D">D</span></span><span class="pill">Michelle Kaufusi <span class="tag R">R</span></span><span class="pill">Jacob Oaks <span class="tag O">IAP</span></span></div>
-</summary>
-<div class="body">
-  <details class="cand">
-    <summary><span class="name">Jeanne Marie Bowen</span> <span class="tag D">D</span>
-      <span class="gist">16 years working for Utah County. Growth and infrastructure.</span></summary>
-    <div class="cand-body">
-      <p>Provo native, BYU grad. Worked for the county 16 years, including the Treasurer's office. Running because growth affects "water to housing to traffic." Wants better communication between the county and cities.</p>
-      <p data-issue="housing transit immigration" class="muted">Nothing specific on housing density, transit, or immigration.</p>
-    </div>
-  </details>
-  <details class="cand">
-    <summary><span class="name">Michelle Kaufusi</span> <span class="tag R">R</span>
-      <span class="gist">Provo mayor 2018 to 2025. "Well-managed growth."</span></summary>
-    <div class="cand-body">
-      <p>Campaigns on "well-managed growth" that will "preserve our way of life," and "respect local control."</p>
-      <p data-issue="housing transit">In 2025 she said she wanted denser housing near transit hubs and FrontRunner.</p>
-      <div class="sides">
-        <div class="side"><h4>Supporters say</h4>Seven years running Provo; knows how the county and cities work together.</div>
-        <div class="side"><h4>Critics say</h4>"Preserve our way of life" and "local control" are usually code for letting cities block new housing.</div>
-      </div>
-    </div>
-  </details>
-  <details class="cand">
-    <summary><span class="name">Jacob Oaks</span> <span class="tag O">IAP</span>
-      <span class="gist">Independent American Party. Lower taxes, stricter data center rules.</span></summary>
-    <div class="cand-body">
-      <p>Wants lower taxes, "stopping reckless spending," and stricter criteria for data centers. Nothing on housing. The Network of Utah Moderates says he refused to pay a court-ordered fine.</p>
-    </div>
-  </details>
-  <details class="sources"><summary>Original sources</summary><ul>
-    <li><a class="src" href="https://afcitizen.com/2026/10/19/utah-county-commission-seat-a-voters-to-choose-bowen-kaufusi-or-oaks/" target="_blank" rel="noopener">American Fork Citizen: Seat A candidates</a></li>
-    <li><a class="src" href="https://www.heraldextra.com/news/2025/oct/15/provo-mayor-michelle-kaufusi-discusses-what-her-plans-would-be-if-elected-for-a-third-term" target="_blank" rel="noopener">Daily Herald: Kaufusi on density near transit</a></li>
-  </ul></details>
-  <details class="jaden"><summary>Jaden's pick</summary>
-    <p class="pick">Bowen.</p>
-    <p>Weak edge. She's the only one with nothing working against what I want, and I like that she's a nerdy county-operations person. I voted against Kaufusi for Provo mayor.</p>
-  </details>
-</div>
-</details>
-
-<!-- ============ CLERK / AUDITOR ============ -->
-<details class="race" id="clerk">
-<summary>
-  <div class="race-title">County Clerk and County Auditor</div>
-  <div class="race-what">The clerk runs elections; the auditor checks the county's money. Both open seats. Experience matters most here.</div>
-  <div class="pills"><span class="pill">Clerk: Astill <span class="tag R">R</span> / Rampton <span class="tag O">Forward</span></span><span class="pill">Auditor: Tanner <span class="tag R">R</span> / Andersen <span class="tag O">IAP</span></span></div>
-</summary>
-<div class="body">
-  <h3>Clerk</h3>
-  <p>The current clerk had rough elections (long lines in 2024, a vote center ran out of paper) and lost his primary.</p>
-  <ul>
-    <li><b>Corey Astill</b> <span class="tag R">R</span>: attorney, a decade as congressional staff. Supports vote by mail, enough staff to avoid lines. Co-hosts a right-leaning podcast with a state senator. No elections experience.</li>
-    <li><b>Russ Rampton</b> <span class="tag O">Forward</span>: about 5 years in the clerk's office, now runs its marriage license and passport office.</li>
-  </ul>
-  <h3>Auditor</h3>
-  <ul>
-    <li><b>Gina Tanner</b> <span class="tag R">R</span>: the office's current budget manager, about 20 years with the county, master's in accounting.</li>
-    <li><b>Hans Andersen</b> <span class="tag O">IAP</span>: CPA, 40+ years. Calls himself a "DOGE auditor for Utah County."</li>
-  </ul>
-  <p class="small muted">The Network of Utah Moderates recommends Rampton and Tanner, citing their experience inside the offices.</p>
-  <details class="sources"><summary>Original sources</summary><ul>
-    <li><a class="src" href="https://lehifreepress.com/2026/10/21/utah-county-auditor-and-clerk/" target="_blank" rel="noopener">Lehi Free Press: clerk and auditor Q&amp;A</a></li>
-    <li><a class="src" href="https://networkofutahmoderates.com/p/utah-voter-guide-utah-county" target="_blank" rel="noopener">Network of Utah Moderates guide</a></li>
-  </ul></details>
-  <details class="jaden"><summary>Jaden's pick</summary>
-    <p class="pick">Rampton for clerk, Tanner for auditor.</p>
-    <p>Both already work in the office they're running for.</p>
-  </details>
-</div>
-</details>
-
-<!-- ============ UNCONTESTED ============ -->
-<details class="race" id="uncontested">
-<summary>
-  <div class="race-title">Uncontested: County Attorney and Sheriff</div>
-  <div class="race-what">One name each. Fill it in or leave it blank; it won't change the result.</div>
-  <div class="pills"><span class="pill">Attorney: Jeff Gray</span><span class="pill">Sheriff: Mike Smith</span></div>
-</summary>
-<div class="body"><p>No opponents, so nothing to compare.</p></div>
-</details>
-
-<!-- ============ JUDGES ============ -->
-<details class="race" id="judges">
-<summary>
-  <div class="race-title">Judges: keep them or not (13 judges, front and back)</div>
-  <div class="race-what">Yes keeps the judge; No removes them. An independent commission reviewed all 13 and said every one meets its standards.</div>
-  <div class="pills"><span class="pill">9 on the front</span><span class="pill">4 on the back</span></div>
-</summary>
-<div class="body">
-  <p>The useful number is the share of lawyers and court staff who recommend keeping each judge. Lower means weaker reviews, though all passed.</p>
-  <div class="scroll"><table class="cmp">
-    <thead><tr><th>Judge</th><th>Court</th><th>Recommend keeping</th></tr></thead>
-    <tr><td>Jill Pohlman</td><td>Utah Supreme Court</td><td>96%</td></tr>
-    <tr><td>Michele Christiansen Forster</td><td>Court of Appeals</td><td>94%</td></tr>
-    <tr><td>David Mortensen</td><td>Court of Appeals</td><td>98%</td></tr>
-    <tr><td>John Luthy</td><td>Court of Appeals</td><td>89%</td></tr>
-    <tr><td>Ryan Harris</td><td>Court of Appeals</td><td>91%</td></tr>
-    <tr><td>Amy Jo Oliver</td><td>Court of Appeals</td><td>88%</td></tr>
-    <tr><td>Gregory Orme</td><td>Court of Appeals</td><td>97%</td></tr>
-    <tr><td>Jared Eldridge</td><td>4th District</td><td>92%</td></tr>
-    <tr><td>Kraig Powell</td><td>4th District</td><td>91%</td></tr>
-    <tr><td><i>Back:</i> Thomas Low</td><td>4th District</td><td>88%</td></tr>
-    <tr><td><i>Back:</i> Anthony Howell</td><td>4th District</td><td>88%</td></tr>
-    <tr><td><i>Back:</i> Douglas Nielsen</td><td>Juvenile Court</td><td>100%</td></tr>
-    <tr><td><i>Back:</i> Shawn Patten</td><td>County Justice Court</td><td>not surveyed (part-time)</td></tr>
-  </table></div>
-
-  <details class="sub"><summary>Why Pohlman is in the news</summary>
-    <p>She joined the unanimous rulings that stopped the Legislature from overriding voter initiatives and that kept its initiative-weakening Amendment D off the 2024 ballot. The state Republican Party chair said she has "zero business being in the robe," and Gov. Cox said unhappy voters should vote against those judges.</p>
-    <p>The other side: the Utah State Bar says "disagreement with a specific ruling should not be the basis for removal." No Utah justice has lost a retention vote since 1990.</p>
-  </details>
-  <details class="sub"><summary>Low and Howell</summary>
-    <p>Both have the lowest scores of the group (88%). In 2017 Low called a man he'd just convicted of sexual abuse "an extraordinarily good man" and let him stay free on bail; that bail decision was reversed. He wasn't publicly disciplined.</p>
-  </details>
-  <details class="sources"><summary>Original sources</summary><ul>
-    <li><a class="src" href="https://judges.utah.gov/s/know-your-judges?county=utah" target="_blank" rel="noopener">Utah judicial review commission: Know Your Judges</a></li>
-    <li><a class="src" href="https://news.ballotpedia.org/2026/10/13/utah-supreme-court-justice-jill-pohlman-faces-a-retention-vote-amid-rulings-on-redistricting/" target="_blank" rel="noopener">Ballotpedia: Pohlman retention</a></li>
-    <li><a class="src" href="https://www.washingtontimes.com/news/2017/apr/17/utah-judge-under-fire-for-rape-case-sympathy/" target="_blank" rel="noopener">Washington Times: Low controversy (2017)</a></li>
-  </ul></details>
-  <details class="jaden"><summary>Jaden's pick</summary>
-    <p class="pick">Yes on all, except No on Low and Howell.</p>
-    <p>Low and Howell have the lowest scores, plus Low's 2017 comments. Yes on Pohlman especially, since the campaign against her is about the initiative rulings I agree with.</p>
-  </details>
-</div>
-</details>
-
-<details class="jaden" style="margin-top:28px">
-  <summary>All of Jaden's picks on one list</summary>
-  <ul>
-    <li>U.S. House: <b>Udell</b></li>
-    <li>State House 62: <b>Chappell</b></li>
-    <li>Amendment A: <b>For</b> &middot; Amendment B: <b>Against</b></li>
-    <li>Commission Seat A: <b>Bowen</b> &middot; Seat B: <b>Hinckley</b></li>
-    <li>Clerk: <b>Rampton</b> &middot; Auditor: <b>Tanner</b></li>
-    <li>Attorney: Gray &middot; Sheriff: Smith (uncontested)</li>
-    <li>Judges: <b>Yes</b> on all except <b>No</b> on Low and Howell</li>
-  </ul>
-  <p class="small">You don't have to vote on every race. A blank race doesn't spoil the rest of your ballot.</p>
-</details>
+<div id="races"></div>
 
 <footer>
-  <p>Researched Oct 28 to Nov 3, 2026, from candidate sites, news coverage, and official vote records. If something looks wrong, tell Jaden.</p>
+  <p>Researched Oct 28 to Nov 3 2026 from candidate sites, news coverage, and official vote records. Something look wrong? Tell Jaden.</p>
 </footer>
 </main>
+
+<div class="bottom">
+  <button type="button" id="openSheet">My ballot &middot; <span id="count">0 decided</span></button>
+  <button type="button" id="toTop" aria-label="Back to top">&#8593;</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <div class="panel" role="dialog" aria-label="My ballot">
+    <div class="grab"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3>My ballot</h3>
+      <button type="button" id="closeSheet" style="border:0;background:var(--soft);border-radius:999px;min-width:38px;min-height:38px;font-size:1.15rem" aria-label="Close">&#215;</button>
+    </div>
+    <p class="small muted">In paper-ballot order, front then back. Saved on this phone and in this page's link.</p>
+    <div class="acts">
+      <button type="button" class="primary" id="share">Save a copy&hellip;</button>
+      <button type="button" id="copy">Copy text</button>
+      <button type="button" id="clear">Clear</button>
+    </div>
+    <p class="small muted">"Save a copy" opens the share sheet. Pick Notes or Messages to keep it after tonight.</p>
+    <label class="jsw"><input type="checkbox" id="showJ"> Show Jaden's picks next to mine</label>
+    <ul class="bl" id="blist"></ul>
+  </div>
+</div>
+
 <script>
-(function(){
-  var btns=document.querySelectorAll('.lens button');
-  btns.forEach(function(b){
-    b.addEventListener('click',function(){
-      var l=b.getAttribute('data-lens');
-      document.body.className=l?('lens-'+l):'';
-      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
-    });
-  });
-  document.getElementById('openAll').addEventListener('click',function(){
-    document.querySelectorAll('details.race').forEach(function(d){d.open=true});
-  });
-  document.getElementById('closeAll').addEventListener('click',function(){
-    document.querySelectorAll('details').forEach(function(d){d.open=false});
-  });
-})();
+/* ================= content ================= */
+function SRC(h,t){return '<li><a class="src" href="'+h+'" target="_blank" rel="noopener">'+t+'</a></li>'}
+var R='R',D='D';
+var RACES=[
+{sec:'Start here'},
+{id:'amendB',title:'Amendment B',short:'Should laws voters pass themselves need 60% if they raise taxes?',issues:['housing','transit'],measure:true,star:true,
+ ask:'Jaden and Brooklyn are both voting <b>Against</b>.',
+ why:'It decides how much power your own vote has later: whether a simple majority of voters can still pass a law that needs money.',
+ more:'<p><b>What\'s an initiative?</b> A law regular people write, gather signatures for, and put on the ballot themselves, without the Legislature. In 2018 Utahns used one to expand Medicaid (it passed with about 53%) after the Legislature wouldn\'t.</p><p>B would require 60% for any initiative that creates or raises a tax, or slows a scheduled tax cut. It doesn\'t apply to the Legislature, which can still raise taxes with a simple majority. It\'s retroactive to Nov 1, 2026.</p>',
+ cands:[{id:'for',name:'For',sub:'yes on B'},{id:'against',name:'Against',sub:'no on B'}],
+ rows:[
+  {label:'A vote means',cells:{for:'Tax initiatives need 60%',against:'Keep a simple majority'}},
+  {label:'Who\'s behind it',cells:{for:'GOP legislators, taxpayer groups',against:'Better Utah, Forward Party'},
+   more:{for:'<p>Sen. Lincoln Fillmore (sponsor), Utah Taxpayers Association, Americans for Prosperity.</p>',against:'<p>Utahns Protecting Our Constitution / Better Boundaries, Better Utah, the Forward Party of Utah.</p>'}},
+  {label:'Best argument',cells:{for:'Tax hikes need broad agreement',against:'Weakens voters\' own lawmaking'},
+   more:{for:'<p>Raising your neighbors\' taxes should take broad agreement. Initiatives skip the vetting and budget tradeoffs bills go through. Voters still decide; the bar is just higher.</p>',against:'<p>The Legislature keeps trying to weaken initiatives, and this is the next try after the courts blocked Amendment D in 2024. It sets a higher bar for voters than for legislators.</p>'},
+   note:'<div class="check"><b>Fact check:</b> true that no 2018 initiative reached 60%, so Medicaid expansion and medical marijuana both would have failed under B. True that the Legislature isn\'t held to the same bar.</div>'},
+  {label:'For your issues',issue:'housing transit',cells:{for:'Harder to fund programs by initiative',against:'Keeps that route open'},
+   more:{for:'<p>Initiatives that pay for something (health coverage, transit, housing funds) usually need a tax. Those would need 60%.</p>',against:'<p>A future transit or housing initiative could still pass with a simple majority.</p>'}}
+ ],
+ srcs:SRC('https://www.sltrib.com/news/politics/2026/10/12/tax-raising-citizen-initiatives/','Salt Lake Tribune: B explained')+SRC('https://www.kuer.org/politics-government/2026-10-13/election-2026-utah-amendment-a-amendment-b-guide-ballot-explainer','KUER: A and B guide')+SRC('https://www.theutahplum.org/p/amendment-b-explained','The Utah Plum: B explained'),
+ takes:[['Jaden','<b>Against.</b> I\'m in huge support of voter initiatives, and the Legislature keeps trying to make them harder. This is the one I care most about on the whole ballot.'],
+        ['Brooklyn','<b>Against.</b> "It affects the direct power of our votes in the future."']],
+ jp:'Jaden and Brooklyn: Against'},
+
+{sec:'Matters most for your issues'},
+{id:'house',title:'U.S. House, District 3',short:'Your one vote in Congress.',issues:['housing','transit','immigration'],
+ why:'Immigration law and ICE funding are decided here, nowhere else on your ballot.',
+ more:'<p>Federal housing money and national immigration policy run through Congress. Maloy is heavily favored (the district leans Republican by 20+ points), but your vote still counts toward which party controls the House.</p><p>Also on the ballot, with almost no coverage: Easley (Constitution), Stoddard (Libertarian), Scott and Hooslyn (unaffiliated).</p>',
+ cands:[{id:'maloy',name:'Celeste Maloy',p:R,sub:'incumbent'},{id:'udell',name:'Kent Udell',p:D,sub:'challenger'}],
+ extraOpts:[{id:'other',label:'Someone else'}],
+ rows:[
+  {label:'Who',cells:{maloy:'In Congress since 2023',udell:'Retired engineering professor'},
+   more:{maloy:'<p>Was staff to the congressman she replaced. The only Utahn on the House Appropriations Committee, which writes federal spending.</p>',
+         udell:'<p>Born in Lehi, raised in a big Latter-day Saint family. Mechanical engineer, then professor at UC Berkeley and the University of Utah. Lives near Moab. First run for office: "I\'m not a career politician nor a lawyer."</p>'}},
+  {label:'Leads with',cells:{maloy:'Tax cuts, water, state control of land',udell:'Cost of living, water, clean government'},
+   more:{maloy:'<p>Utahns should "keep as much of their own money in their own pockets as possible": no tax on tips or overtime, keep the 2017 tax cuts. Federal money for the Great Salt Lake. Supported shrinking Bears Ears and Grand Staircase.</p>',
+         udell:'<p>His four themes: cost of living, water and public lands, the Constitution and rule of law, and honesty in government. Takes no corporate PAC money; wants to overturn <i>Citizens United</i>. Wants high earners to pay more in taxes.</p>'}},
+  {label:'Housing',issue:'housing',cells:{maloy:'Cut red tape; tax cuts',udell:'Grants for starter homes'},
+   more:{maloy:'<p>Voted for the ROAD to Housing Act, which she says "cuts a lot of the red tape that drives up the cost of housing." It passed 358 to 32, so nearly everyone voted for it.</p>',
+         udell:'<p>Supports "building starter homes in communities with access to family-friendly resources such as good schools, parks and churches," paid for with state, city and federal grants. "We need to get people out of the basement and into their homes."</p>'}},
+  {label:'Transit',issue:'transit',cells:{maloy:'Nothing stated',udell:'Nothing stated'}},
+  {label:'Immigration',issue:'immigration',cells:{maloy:'Voted to expand ICE detention',udell:'"Humane, workable"; no plan'},
+   more:{maloy:'<p>Checked on the House roll calls:</p><ul><li><b>Laken Riley Act (2025): Yes.</b> Requires ICE to detain undocumented people <i>charged with</i> (not convicted of) theft, burglary, or shoplifting.</li><li><b>One Big Beautiful Bill (2025): Yes, twice.</b> About $170 billion for immigration and border enforcement, including about $45 billion for detention.</li></ul>',
+         udell:'<p>"Our immigration system is broken, but cruelty, chaos, and political theater are not solutions. We need lawful, humane, and workable policies that respect the rule of law, treat people with dignity, and support communities, employers, and border states." Stresses the 4th Amendment. No specific bill.</p>'},
+   note:'<div class="check"><b>Fact check:</b> the Laken Riley Act does cover people only charged or arrested. Both sides agree on that; they disagree on whether it\'s fair.</div>'},
+  {label:'Record',cells:{maloy:'3 years; voted for Big Beautiful Bill',udell:'None'},
+   more:{maloy:'<p>Missed 1.6% of votes, about average. The Big Beautiful Bill also cut Medicaid and SNAP; the Congressional Budget Office estimated about 10 million more people uninsured by 2034.</p>',udell:'<p>Never held office.</p>'}},
+  {label:'Other stands',cells:{maloy:'Pro-nuclear; data centers are local',udell:'Ban new data centers; doubts nuclear'},
+   more:{maloy:'<p>Calls nuclear "the energy source of the future." Light-touch AI rules. Says data centers are a local decision.</p>',
+         udell:'<p>Wants a moratorium on new Utah data centers. On nuclear: "We have not shown that they\'re safe." Wants Medicare-style coverage "accessible to all."</p>'},
+   note:'<div class="check"><b>Fact check:</b> on safety, the data disagrees with Udell: nuclear causes about as few deaths per unit of electricity as wind and solar. His point that new nuclear is expensive is fair; the last U.S. plant ran years late and billions over budget.</div>'},
+  {label:'Best case for / against',cells:{maloy:'Experience vs. ICE and Medicaid votes',udell:'Integrity vs. no experience'},
+   more:{maloy:'<p><b>For:</b> experienced, sits on the committee that controls federal money (which matters for water and the Great Salt Lake), cuts taxes, enforces immigration law.</p><p><b>Against:</b> voted for a big expansion of ICE detention, including people only charged with minor crimes, and for Medicaid cuts that hit working families.</p>',
+         udell:'<p><b>For:</b> a scientist with no corporate money who\'d vote with Democrats on immigration, health care and taxes.</p><p><b>Against:</b> no experience and few concrete plans. Wants to block data centers and doubts nuclear, which cuts against cheaper power. Lives far from Utah County.</p>'}}
+ ],
+ srcs:SRC('https://clerk.house.gov/evs/2025/roll006.xml','House roll call: Laken Riley Act')+SRC('https://clerk.house.gov/evs/2025/roll190.xml','House roll call: Big Beautiful Bill')+SRC('https://www.deseret.com/politics/2026/10/24/what-to-know-about-the-candidates-running-for-utahs-3rd-congressional-district/','Deseret News: the candidates')+SRC('https://www.sltrib.com/news/politics/2026/10/03/celeste-maloy-kent-udell-split/','Salt Lake Tribune: debate recap')+SRC('https://kentudellforcongress.com/','Udell\'s campaign site')+SRC('https://ourworldindata.org/safest-sources-of-energy','Our World in Data: energy safety'),
+ takes:[['Jaden','<b>Udell.</b> I was torn. Maloy\'s actually better than him on the energy stuff I care about. But a House vote mostly counts through which party runs the House, and I want the party that won\'t fund mass ICE detention.'],
+        ['Brooklyn','"Neither Kent Udell nor Celeste Maloy seem to care too much."']],
+ jp:'Jaden: Udell'},
+
+{id:'hd62',title:'Utah House, District 62',short:'Your state representative (Provo and Springville).',issues:['housing','transit','immigration'],
+ why:'Writes Utah\'s rules on zoning, renters, UTA, and in-state tuition.',
+ more:'<p>Probably the race that matters most for housing. State law decides what cities can require (parking, lot sizes, how many roommates can share a house) and sets landlord-tenant rules. The Legislature also controls UTA\'s leadership and much of its money, and decides things like in-state tuition for undocumented students.</p><p>Republicans hold about 60 of the House\'s 75 seats, so a Democrat\'s bills pass only with Republican votes.</p>',
+ cands:[{id:'thurston',name:'Norm Thurston',p:R,sub:'incumbent'},{id:'chappell',name:'David Chappell',p:D,sub:'challenger'}],
+ rows:[
+  {label:'Who',cells:{thurston:'Economist; in office since 2015',chappell:'BYU civil engineer; first run'},
+   more:{thurston:'<p>Princeton PhD economist and former state health-data official.</p>',chappell:'<p>Civil engineer at BYU; co-founded the Cougar Pride Center. Refuses corporate money.</p>'}},
+  {label:'Leads with',cells:{thurston:'Tax cuts, health costs, local control',chappell:'Cost of living, renters, voter power'},
+   more:{thurston:'<p>Income tax cuts; lower drug and health costs (insulin access, drug-price transparency); local control: "the best solutions for Provo and Springville are not found in top-down mandates."</p>',
+         chappell:'<p>Cut sales tax on groceries and essentials, free school meals, a Renters\' and Workers\' Bill of Rights, ranked-choice voting, an independent commission to draw maps, and no corporate money in politics. Says his plan needs no tax increases.</p>'}},
+  {label:'Housing',issue:'housing',cells:{thurston:'Voted against state housing reforms',chappell:'Small additions; renter rights; no high-rises'},
+   more:{thurston:'<p>Says he supports more local housing supply. His votes on contested bills:</p><ul><li><b>No</b> on SB 181 (2025): stops cities requiring garages on affordable homes and oversized parking. Passed 50-20.</li><li><b>No</b> on HB 492 (2026): state loans for the pipes and roads new housing needs. Passed 61-8.</li><li><b>No</b> on HCR 6 (2026): support for Utah\'s housing plan. Passed 41-26.</li><li><b>No</b> on HB 119 (2025): stops HOAs banning solar panels outright.</li></ul>',
+         chappell:'<ul><li>Low-interest state loans so homeowners can add a unit (attic, backyard cottage) and sell it.</li><li>Easier duplex conversions; replace limits on how many unrelated people share a house with health-and-safety rules.</li><li><b>Not</b> high-rises: "My plan is about small additions, not high-rises."</li><li>Renters: ban application fees, cap deposits at 2 months\' rent, a week (not 3 days) to move after an eviction notice, first evictions off your record, and landlords must justify rent increases to a state office.</li></ul>'}},
+  {label:'Transit',issue:'transit',cells:{thurston:'Against station-area housing (1 of 5 no votes)',chappell:'Nothing specific'},
+   more:{thurston:'<ul><li><b>No</b> on SB 26 (2025): funding for housing and shops around train stations; one of only 5 no votes. It also had a convention-center zone, which may be what he objected to.</li><li><b>Yes</b> on SB 197 (2026): governor appoints UTA\'s director. Passed 65-2.</li></ul>',
+         chappell:'<p>Nothing in his platform. His site says the state\'s recent income tax cuts could have paid for fare-free UTA many times over, but he doesn\'t promise it.</p>'}},
+  {label:'Immigration',issue:'immigration',cells:{thurston:'Against tuition ban; for car impounds',chappell:'Abolish ICE'},
+   more:{thurston:'<ul><li><b>No, twice,</b> on HB 386 (2026) once it was rewritten to bar undocumented immigrants from in-state tuition, some home loans, and some professional licenses. It passed the House 39-33 and died before the Senate voted. A Provo Republican sponsored it; he broke with her.</li><li><b>Yes</b> on HB 136 (2026): police must impound the car of anyone driving without a license, permit, or driving privilege card (the card undocumented immigrants can get). $600 to get it back plus towing, and a licensed driver has to pick it up. Passed 55-12.</li><li><b>Yes</b> on a state Refugee Services Office (2025). Passed 67-7.</li></ul>',
+         chappell:'<p>"Immigration and Customs Enforcement (ICE) should be abolished." Says immigration violations are civil matters for civil courts: "I will do everything in my power as a state legislator to protect Utahns from ICE."</p>'},
+   note:'<div class="check"><b>Fact check:</b> Chappell says "ICE has killed hundreds of people since it was created in 2003." More than 200 people have died in ICE custody since 2003 by ICE\'s own reports, mostly recorded as medical causes or suicide; critics blame poor care. "Killed" is his framing. A state legislator can\'t abolish ICE (that\'s Congress), but can limit how much Utah helps it.</div>'},
+  {label:'Citizen initiatives',cells:{thurston:'Voted to put Amendment B on the ballot',chappell:'Opposes Amendment B'},
+   more:{thurston:'<p>Also voted for every contested bill tightening petition rules. Declined to say how he\'d vote on A or B.</p>',chappell:'<p>Wants the people to be able to amend the constitution directly.</p>'}},
+  {label:'Record',cells:{thurston:'11 years in the House',chappell:'None'},
+   more:{thurston:'<p>Health-cost bills (even Chappell credits his insulin and drug-price work), Utah\'s 0.05 DUI limit, voted for the income tax cuts.</p>',chappell:'<p>Never held office. Also says data centers "should not be built in Utah."</p>'}},
+  {label:'Best case for / against',cells:{thurston:'Small wins that pass vs. blocks housing reform',chappell:'Renter plan vs. big, untested promises'},
+   more:{thurston:'<p><b>For:</b> a policy economist who reads the bills and gets modest, practical ones passed (drug prices, insulin). Broke with his party on the tuition ban. Thinks Provo should decide Provo\'s zoning.</p><p><b>Against:</b> voted against the state\'s main tools to make housing cheaper, voted to make initiatives harder, backed impounds that hit immigrant drivers hard.</p>',
+         chappell:'<p><b>For:</b> the most detailed renter plan on the ballot; lets ordinary homeowners build; would protect initiatives and immigrant neighbors.</p><p><b>Against:</b> big promises with little on how he\'d get them through a Legislature where Republicans hold about 60 of 75 House seats. Making landlords justify rent increases is a step toward rent control, which economists mostly find shrinks rental supply. Opposing high-rises limits how much gets built. "Abolish ICE" is unpopular in Utah.</p>'}}
+ ],
+ srcs:SRC('https://www.ksl.com/article/51455044/utahns-first-or-eroding-the-utah-way-house-oks-measure-cracking-down-on-illegal-immigration','KSL: HB 386 House vote')+SRC('https://le.utah.gov/Session/2026/bills/enrolled/HB0136.pdf','HB 136 (2026) text')+SRC('https://le.utah.gov/Session/2025/bills/enrolled/SB0181.pdf','SB 181 (2025) text')+SRC('https://www.sltrib.com/news/politics/2026/10/12/norm-thurston-faces-david-chappell/','Salt Lake Tribune: Thurston vs. Chappell')+SRC('https://www.normthurston.com/?p=2473','Thurston: debate statements')+SRC('https://davidforutah.com/faq','Chappell FAQ (ICE, housing)')+SRC('https://davidforutah.com/rentersandworkers','Chappell: renters plan')+SRC('https://www.ice.gov/detain/detainee-death-reporting','ICE: detainee death reports'),
+ takes:[['Jaden','<b>Chappell.</b> He\'s better on what I care about most: zoning reform, roommate limits, making landlords compete, and protecting initiatives. Where I disagree with him: I want more high-density housing, not less, and he\'s against data centers. Credit to Thurston for voting against the tuition ban.'],
+        ['Brooklyn','"Norm Thurston kinda cares, and thinks his small actions will help, but David Chappell makes huge promises that he doesn\'t seem to have any idea how to implement."']],
+ jp:'Jaden: Chappell'},
+
+{sec:'Lower stakes for your issues'},
+{id:'commB',title:'County Commission, Seat B',short:'Open seat running the county.',issues:['housing','transit'],
+ why:'Runs the county budget, roads and jail; zones land outside city limits.',
+ more:'<p>One of 3 commissioners. The commission only zones unincorporated land, so most Provo housing decisions are the city council\'s. It does set county road priorities, coordinates with UTA and the cities, and has the final say on the county\'s data center rules.</p>',
+ cands:[{id:'allen',name:'J. Allen',p:D},{id:'spencer',name:'David Spencer',p:R},{id:'hinckley',name:'David Hinckley',p:'Forward'}],
+ rows:[
+  {label:'Who',cells:{allen:'Retired tech exec',spencer:'12 yrs Orem council',hinckley:'University data analyst'},
+   more:{allen:'<p>30 years as a technology executive, in Utah about 40 years.</p>',spencer:'<p>Orem City Council for 12 years; won the GOP primary with 42%.</p>',hinckley:'<p>Leads a data analytics team in higher education; master\'s in management; Orem; six kids.</p>'}},
+  {label:'Leads with',cells:{allen:'Stop data centers',spencer:'Roads, low taxes',hinckley:'Growth, county reform'},
+   more:{allen:'<p>"I want to stop the construction of AI data centers without public support." Would vote against commissioner pay raises.</p>',spencer:'<p>Says the county is "approximately 15 years behind" on roads. Opposed the 2019 and 2024 county property tax hikes: "It\'s killing the citizens."</p>',hinckley:'<p>"My top priority is managing our extraordinary growth." Growth should "pay its fair share." Wants to replace the 3-person commission with a 7-member council and a professional county manager.</p>'}},
+  {label:'Housing',issue:'housing',cells:{allen:'Vague',spencer:'Blocked apartments in Orem',hinckley:'Near jobs and transit'},
+   more:{allen:'<p>Wants evidence-based "transportation, infrastructure and land use policies that build an affordable future." Nothing more specific.</p>',spencer:'<p>Says he passed an Orem rule keeping high-density housing out of residential zones and removed 10,000+ planned apartments from Orem\'s long-range plans. Called a farm rezoning for single-family homes a "tragedy."</p>',hinckley:'<p>Supports "housing policies that make it easier for families to live near jobs and transportation" instead of "pushing growth farther west and creating longer commutes."</p>'}},
+  {label:'Transit',issue:'transit',cells:{allen:'"Evidence-based" transportation',spencer:'Roads first',hinckley:'Coordinate with transit'},
+   more:{hinckley:'<p>Wants better coordination between cities, transit agencies and the Legislature.</p>'}},
+  {label:'Best case for / against',cells:{allen:'Fresh eyes vs. anti-build',spencer:'Experience vs. anti-housing',hinckley:'Best fit vs. long shot'},
+   more:{allen:'<p><b>For:</b> outsider, against pay raises, wants public say on data centers.</p><p><b>Against:</b> blocking data centers costs tax base and jobs; nothing concrete on housing.</p>',spencer:'<p><b>For:</b> experienced; protects open space and water; keeps taxes down.</p><p><b>Against:</b> blocking apartments is a big reason rent is high. The Network of Utah Moderates notes controversy over him yelling at residents and that he lost his last reelection.</p>',hinckley:'<p><b>For:</b> the only one talking about housing near transit; the Moderates "strongly" recommend him.</p><p><b>Against:</b> Forward Party candidates rarely win; never held office.</p>'}}
+ ],
+ srcs:SRC('https://www.davidhinckley.com/','Hinckley campaign site')+SRC('https://alpinehighlandtribune.com/articles/utah-county-commission-seat-b-draws-three-candidates-nov-3-mvgmobk8','Alpine-Highland Tribune: Seat B')+SRC('https://www.heraldextra.com/news/local/2026/oct/25/david-spencer-emphasizes-stewardship-addressing-growth-in-campaign-for-utah-county-commission-seat-b/','Daily Herald: Spencer')+SRC('https://networkofutahmoderates.com/p/utah-voter-guide-utah-county','Network of Utah Moderates guide'),
+ takes:[['Jaden','<b>Hinckley.</b> Housing near jobs and transit instead of sprawl, and he\'s a governance nerd. Spencer is the anti-apartment candidate, and Allen wants to stop data centers.']],
+ jp:'Jaden: Hinckley'},
+
+{id:'commA',title:'County Commission, Seat A',short:'Same job, the other open seat.',issues:['housing','transit'],
+ why:'Same job as Seat B. No one here has a housing record to judge.',
+ more:'<p>Most zoning that affects Provo belongs to the city council, not the county.</p>',
+ cands:[{id:'bowen',name:'Jeanne Bowen',p:D},{id:'kaufusi',name:'Michelle Kaufusi',p:R},{id:'oaks',name:'Jacob Oaks',p:'IAP'}],
+ rows:[
+  {label:'Who',cells:{bowen:'16 yrs county staff',kaufusi:'Provo mayor 2018 to 2025',oaks:'Independent American Party'},
+   more:{bowen:'<p>Provo native, BYU grad, worked for the county 16 years including the Treasurer\'s office. No campaign website.</p>'}},
+  {label:'Leads with',cells:{bowen:'Infrastructure, communication',kaufusi:'"Well-managed growth"',oaks:'Lower taxes, less spending'},
+   more:{bowen:'<p>Running because growth affects "water to housing to traffic." Wants better communication within the county and with cities.</p>',kaufusi:'<p>"Well-managed growth" that will "preserve our way of life," and "respect local control."</p>',oaks:'<p>Lower taxes, "stopping reckless spending," stricter rules for data centers.</p>'}},
+  {label:'Housing and transit',issue:'housing transit',cells:{bowen:'Nothing specific',kaufusi:'Denser near FrontRunner (2025)',oaks:'Nothing stated'},
+   more:{kaufusi:'<p>In 2025 she said she wanted denser housing near transit hubs and FrontRunner.</p>'}},
+  {label:'Watch for',cells:{bowen:'Low profile',kaufusi:'"Local control" language',oaks:'Unpaid court fine'},
+   more:{kaufusi:'<p>"Preserve our way of life" and "local control" are often how candidates signal letting cities block new housing. Supporters see seven years running Provo as the experience the county needs.</p>',oaks:'<p>The Network of Utah Moderates says he refused to pay a court-ordered fine.</p>'}}
+ ],
+ srcs:SRC('https://afcitizen.com/2026/10/19/utah-county-commission-seat-a-voters-to-choose-bowen-kaufusi-or-oaks/','American Fork Citizen: Seat A')+SRC('https://www.heraldextra.com/news/2025/oct/15/provo-mayor-michelle-kaufusi-discusses-what-her-plans-would-be-if-elected-for-a-third-term','Daily Herald: Kaufusi on density'),
+ takes:[['Jaden','<b>Bowen.</b> Weak edge. She\'s the only one with nothing working against what I want, and I like that she\'s a nerdy county-operations person. I voted against Kaufusi for Provo mayor.']],
+ jp:'Jaden: Bowen'},
+
+{id:'amendA',title:'Amendment A',short:'How proposed amendments get announced.',issues:[],measure:true,
+ why:'Procedural: swaps the newspaper-printing rule for 60 days of public notice set by state law.',
+ more:'<p>Two amendments were thrown off the 2024 ballot partly because the state didn\'t meet the newspaper rule. A 2025 law makes initiatives follow the same rule, so if A fails, initiative backers would pay about $1.4 million for newspaper notices.</p>',
+ cands:[{id:'for',name:'For',sub:'yes on A'},{id:'against',name:'Against',sub:'no on A'}],
+ rows:[
+  {label:'A vote means',cells:{for:'60-day notice, method set by law',against:'Keep the newspaper rule'}},
+  {label:'Who\'s behind it',cells:{for:'Whole Legislature (unanimous)',against:'No organized group'}},
+  {label:'Best argument',cells:{for:'Saves ~$1.4M; helps initiatives',against:'Legislature could weaken notice later'},
+   more:{for:'<p>Newspapers aren\'t how people get news anymore. Saves up to $1.4 million every two years and spares initiative campaigns that cost.</p>',against:'<p>The Constitution would only say "60 days, in a manner established by state law," so the Legislature could change how notice works without a public vote.</p>'}}
+ ],
+ srcs:SRC('https://www.sltrib.com/news/politics/2026/10/12/amendment-proposed-change-utah/','Salt Lake Tribune: A explained')+SRC('https://ballotpedia.org/Utah_Publication_Requirements_for_Constitutional_Amendments_Measure_(2026)','Ballotpedia: Amendment A'),
+ takes:[['Jaden','<b>For.</b> It quietly helps initiatives by killing a $1.4 million bill they\'d otherwise face. The risk of the Legislature weakening notice later is real but smaller.']],
+ jp:'Jaden: For'},
+
+{id:'clerk',title:'County Clerk',short:'Runs county elections.',issues:[],
+ why:'The current clerk had rough elections (long lines, a vote center out of paper) and lost his primary.',
+ cands:[{id:'astill',name:'Corey Astill',p:R},{id:'rampton',name:'Russ Rampton',p:'Forward'}],
+ rows:[
+  {label:'Who',cells:{astill:'Attorney; ex-congressional staff',rampton:'5 yrs in the clerk\'s office'}},
+  {label:'Leads with',cells:{astill:'Signature checks, short lines, vote by mail',rampton:'Experience, impartiality'},
+   more:{astill:'<p>"Rigorous signature verification, accurate voter rolls, and full transparency," enough staff to avoid lines, keep vote by mail. Co-hosts a right-leaning podcast with a state senator.</p>',rampton:'<p>Runs the office\'s marriage license and passport division. The Network of Utah Moderates recommends him for "real-world experience" and "a clear commitment to impartiality."</p>'}},
+  {label:'Election experience',cells:{astill:'None',rampton:'Works in the office now'}}
+ ],
+ srcs:SRC('https://lehifreepress.com/2026/10/21/utah-county-auditor-and-clerk/','Lehi Free Press: clerk and auditor'),
+ takes:[['Jaden','<b>Rampton.</b> He already works in the office he\'s running for.']],
+ jp:'Jaden: Rampton'},
+
+{id:'auditor',title:'County Auditor',short:'Checks the county\'s money.',issues:[],
+ why:'Budgeting, financial reports, tax-rate math. Open seat.',
+ cands:[{id:'tanner',name:'Gina Tanner',p:R},{id:'andersen',name:'Hans Andersen',p:'IAP'}],
+ rows:[
+  {label:'Who',cells:{tanner:'The office\'s budget manager',andersen:'CPA, 40+ years'}},
+  {label:'Leads with',cells:{tanner:'Transparent, target-based budgets',andersen:'"DOGE auditor"; open books'}},
+  {label:'County experience',cells:{tanner:'About 20 years',andersen:'None'},
+   more:{tanner:'<p>The Moderates say she "could do the job well on day 1."</p>',andersen:'<p>The Moderates say he "brings no relevant experience" and is very partisan.</p>'}}
+ ],
+ srcs:SRC('https://alpinehighlandtribune.com/articles/gina-tanner-seeks-utah-county-auditor-seat-nov-3-mvidnbv0','Alpine-Highland Tribune: Tanner')+SRC('https://alpinehighlandtribune.com/articles/hans-andersen-seeks-utah-county-auditor-as-independent-american-mvidmbdt','Alpine-Highland Tribune: Andersen'),
+ takes:[['Jaden','<b>Tanner.</b> She already works in the office she\'s running for.']],
+ jp:'Jaden: Tanner'},
+
+{id:'judges',title:'Judges',short:'Keep or remove 13 judges (front and back).',issues:[],judges:true,
+ why:'Yes keeps a judge, No removes them. An independent review passed all 13.',
+ more:'<p>The percentage is the share of lawyers and court staff who recommend keeping each judge. All passed, so a lower number just means weaker reviews.</p><p><b>Pohlman</b> joined the unanimous rulings that stopped the Legislature from overriding voter initiatives. The state GOP chair said she has "zero business being in the robe"; the Utah State Bar says "disagreement with a specific ruling should not be the basis for removal." No Utah justice has lost since 1990.</p><p><b>Low and Howell</b> have the lowest scores (88%). In 2017 Low called a man he\'d just convicted of sexual abuse "an extraordinarily good man" and let him stay free on bail, a decision later reversed. No public discipline.</p>',
+ srcs:SRC('https://judges.utah.gov/s/know-your-judges?county=utah','Know Your Judges (official reviews)')+SRC('https://news.ballotpedia.org/2026/10/13/utah-supreme-court-justice-jill-pohlman-faces-a-retention-vote-amid-rulings-on-redistricting/','Ballotpedia: Pohlman')+SRC('https://www.washingtontimes.com/news/2017/apr/17/utah-judge-under-fire-for-rape-case-sympathy/','Washington Times: Low (2017)'),
+ takes:[['Jaden','<b>Yes on all, except No on Low and Howell.</b> They have the lowest scores, plus Low\'s 2017 comments. Yes on Pohlman especially, since the campaign against her is about the initiative rulings I agree with.']]},
+
+{id:'uncontested',title:'Uncontested',short:'County Attorney Jeff Gray, Sheriff Mike Smith.',issues:[],info:true,
+ why:'One name each. Fill it in or leave it blank; it won\'t change the result.'}
+];
+var JUDGES=[
+ ['pohlman','Jill Pohlman','Supreme Court','96%','F'],['forster','Michele Christiansen Forster','Court of Appeals','94%','F'],['mortensen','David Mortensen','Court of Appeals','98%','F'],['luthy','John Luthy','Court of Appeals','89%','F'],['harris','Ryan Harris','Court of Appeals','91%','F'],['oliver','Amy Jo Oliver','Court of Appeals','88%','F'],['orme','Gregory Orme','Court of Appeals','97%','F'],['eldridge','Jared Eldridge','4th District','92%','F'],['powell','Kraig Powell','4th District','91%','F'],
+ ['low','Thomas Low','4th District','88%','B'],['howell','Anthony Howell','4th District','88%','B'],['nielsen','Douglas Nielsen','Juvenile Court','100%','B'],['patten','Shawn Patten','Justice Court','not surveyed','B']];
+var ORDER=[['F'],['house'],['hd62'],['commA'],['commB'],['i','County Attorney','Jeff Gray (uncontested)'],['auditor'],['clerk'],['i','Sheriff','Mike Smith (uncontested)'],['judgesF'],['B'],['judgesB'],['amendA'],['amendB']];
+
+/* ================= state ================= */
+var KEY='alena-ballot-2026-v1', S={v:{},n:{},j:{},t:0};
+function enc(o){var b=new TextEncoder().encode(JSON.stringify(o)),s='';for(var i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+function dec(s){s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';var bin=atob(s),u=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return JSON.parse(new TextDecoder().decode(u))}
+function load(){var c=[];try{var a=JSON.parse(localStorage.getItem(KEY));if(a)c.push(a)}catch(e){}
+ try{var q=new URLSearchParams(location.search).get('b');if(q)c.push(dec(q))}catch(e){}
+ c.sort(function(x,y){return (y.t||0)-(x.t||0)});if(c[0])S={v:c[0].v||{},n:c[0].n||{},j:c[0].j||{},t:c[0].t||0}}
+function isEmpty(){return !Object.keys(S.v).length&&!Object.keys(S.j).length&&!Object.keys(S.n).some(function(k){return S.n[k]})}
+function link(){return location.origin+location.pathname+(isEmpty()?'':'?b='+enc(S))}
+var toastT;function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on')},1300)}
+function save(quiet){S.t=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}
+ try{history.replaceState(null,'',link())}catch(e){}refresh();if(!quiet)toast('Saved ✓')}
+
+/* ================= render ================= */
+function pc(p){return p===R?'var(--r)':p===D?'var(--d)':p?'var(--o)':'var(--accent)'}
+function tag(p){return p?'<span class="tag '+(p===R||p===D?p:'')+'">'+p+'</span>':''}
+function byId(id){for(var i=0;i<RACES.length;i++)if(RACES[i].id===id)return RACES[i]}
+function optLabel(r,v){if(!v)return '';var o=(r.cands||[]).concat(r.extraOpts||[]).filter(function(c){return c.id===v})[0];return o?(o.name||o.label):''}
+var ICO={housing:'🏠',transit:'🚌',immigration:'🌎'};
+function render(){
+ var h='';
+ RACES.forEach(function(r){
+  if(r.sec){h+='<h2 data-sec>'+r.sec+'</h2>';return}
+  var n=(r.cands||[]).length;
+  h+='<details class="race'+(r.star?' star':'')+'" id="race-'+r.id+'" data-issues="'+r.issues.join(' ')+'"><summary>';
+  if(r.star)h+='<span class="flag">&#9733; The one we\'d most ask you to look at</span>';
+  h+='<div class="rt">'+r.title+'</div><div class="rs">'+r.short+'</div>';
+  if(r.ask)h+='<div class="ask">'+r.ask+'</div>';
+  h+='<div class="pills">';
+  if(r.cands&&!r.measure)r.cands.forEach(function(c){h+='<span class="pill">'+c.name+tag(c.p)+'</span>'});
+  h+='<span class="pill mine" data-mine="'+r.id+'"></span></div></summary><div class="body">';
+  h+='<div class="why">'+r.why+'</div>';
+  if(r.more)h+='<details class="more"><summary>More about this '+(r.measure?'measure':'race')+'</summary>'+r.more+'</details>';
+  if(r.cands){
+   h+='<div class="cmp" style="--n:'+n+'"><div class="cells cmp-head">';
+   r.cands.forEach(function(c){h+='<div class="cell head" style="--pc:'+pc(c.p)+'">'+c.name+tag(c.p)+(c.sub?'<span class="sub">'+c.sub+'</span>':'')+'</div>'});
+   h+='</div>';
+   r.rows.forEach(function(row){
+    var ia=row.issue?' data-issue="'+row.issue+'"':'';
+    var inner='<div class="rowlabel">'+(row.issue?row.issue.split(' ').map(function(x){return ICO[x]}).join('')+' ':'')+row.label+'</div><div class="cells">';
+    r.cands.forEach(function(c){inner+='<div class="cell" style="--pc:'+pc(c.p)+'">'+(row.cells[c.id]||'—')+'</div>'});
+    inner+='</div>';
+    if(row.more||row.note){
+     h+='<details class="row"'+ia+'><summary>'+inner+'</summary><div class="rowmore">';
+     r.cands.forEach(function(c){var m=row.more&&row.more[c.id];if(m)h+='<div class="pm" style="--pc:'+pc(c.p)+'"><div class="pmn">'+c.name+'</div>'+m+'</div>'});
+     h+=(row.note||'')+'</div></details>';
+    }else h+='<div class="row"'+ia+'><div class="static">'+inner+'</div></div>';
+   });
+   h+='</div>';
+   if(r.star)h+='<p class="hint">Tap a row with + to read the full version side by side.</p>';
+  }
+  if(r.judges)h+=judgesHtml();
+  if(!r.info){
+   h+='<div class="vote"><div class="vh">Your vote<span class="saved" data-saved="'+r.id+'"></span></div>';
+   if(!r.judges){h+='<div class="opts">';
+    r.cands.concat(r.extraOpts||[]).forEach(function(c){h+='<button type="button" class="opt" data-race="'+r.id+'" data-val="'+c.id+'" aria-pressed="false"><span class="dot"></span><span>'+(c.label||c.name)+tag(c.p)+'</span></button>'});
+    h+='</div>'}
+   h+='<textarea data-note="'+r.id+'" rows="1" placeholder="Why? (optional)"></textarea></div>';
+  }
+  if(r.srcs)h+='<details class="srcs"><summary>Original sources &#8599;</summary><ul>'+r.srcs+'</ul></details>';
+  (r.takes||[]).forEach(function(t){h+='<details class="take"><summary>'+t[0]+'\'s take</summary><p>'+t[1]+'</p></details>'});
+  h+='</div></details>';
+ });
+ document.getElementById('races').innerHTML=h;
+}
+function judgesHtml(){
+ var h='<div class="jtools"><button type="button" id="jYes">Yes on all</button><button type="button" id="jClear">Clear</button></div><table class="jt">',side='';
+ JUDGES.forEach(function(j){
+  if(j[4]!==side){side=j[4];h+='<tr><td colspan="3" class="muted small" style="padding-top:12px;border:0">'+(side==='F'?'Front of ballot':'Back of ballot')+'</td></tr>'}
+  h+='<tr><td><b>'+j[1]+'</b><br><span class="muted small">'+j[2]+'</span></td><td class="pct small">'+j[3]+'</td><td><div class="yn"><button type="button" data-judge="'+j[0]+'" data-j="y" aria-pressed="false">Yes</button><button type="button" data-judge="'+j[0]+'" data-j="n" aria-pressed="false">No</button></div></td></tr>';
+ });
+ return h+'</table>';
+}
+
+/* ================= state -> UI ================= */
+function last(name){return name.split(' ').pop()}
+function judgeSummary(sd){var y=[],n=[],u=0;JUDGES.forEach(function(j){if(sd&&j[4]!==sd)return;var v=S.j[j[0]];if(v==='y')y.push(last(j[1]));else if(v==='n')n.push(last(j[1]));else u++});return {y:y,n:n,u:u}}
+function decided(){var c=0,t=0;RACES.forEach(function(r){if(!r.id||r.info)return;t++;if(r.judges){if(JUDGES.every(function(j){return S.j[j[0]]}))c++}else if(S.v[r.id])c++});return [c,t]}
+function refresh(){
+ document.querySelectorAll('.opt').forEach(function(b){b.setAttribute('aria-pressed',S.v[b.dataset.race]===b.dataset.val?'true':'false')});
+ document.querySelectorAll('[data-judge]').forEach(function(b){b.setAttribute('aria-pressed',S.j[b.dataset.judge]===b.dataset.j?'true':'false')});
+ document.querySelectorAll('[data-mine]').forEach(function(el){var id=el.dataset.mine,r=byId(id),t='';
+  if(r.judges){var s=judgeSummary();if(s.y.length||s.n.length)t='✓ You: '+s.y.length+' yes, '+s.n.length+' no'}
+  else if(S.v[id])t='✓ You: '+optLabel(r,S.v[id]);el.textContent=t});
+ var d=decided();document.getElementById('count').textContent=d[0]+' of '+d[1]+' decided';
+ renderSheet();
+}
+function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function item(name,pick,note,jp,go){return '<li><div class="k"><div class="rn">'+esc(name)+'</div><div class="pk'+(pick?'':' none')+'">'+(pick?esc(pick):'Not decided')+'</div>'+(note?'<div class="nt">'+esc(note)+'</div>':'')+(jp?'<div class="jp">'+esc(jp)+'</div>':'')+'</div><button type="button" data-go="'+go+'">Open</button></li>'}
+function judgePick(sd){var s=judgeSummary(sd);if(!s.y.length&&!s.n.length)return '';var p=[];if(s.y.length)p.push('Yes: '+s.y.join(', '));if(s.n.length)p.push('No: '+s.n.join(', '));if(s.u)p.push(s.u+' undecided');return p.join(' · ')}
+function renderSheet(){
+ var h='';ORDER.forEach(function(o){
+  if(o[0]==='F'||o[0]==='B'){h+='<li class="side">'+(o[0]==='F'?'Front':'Back')+'</li>';return}
+  if(o[0]==='i'){h+='<li><div class="k"><div class="rn">'+o[1]+'</div><div class="pk">'+o[2]+'</div></div></li>';return}
+  if(o[0]==='judgesF')return h+=item('Judges (front)',judgePick('F'),'','Jaden: Yes on all','judges'),undefined;
+  if(o[0]==='judgesB')return h+=item('Judges (back)',judgePick('B'),S.n.judges,'Jaden: No on Low and Howell, Yes on the rest','judges'),undefined;
+  var r=byId(o[0]);h+=item(r.title,optLabel(r,S.v[r.id]),S.n[r.id],r.jp,r.id);
+ });
+ document.getElementById('blist').innerHTML=h;
+}
+function asText(){
+ var L=['My ballot, Nov 3 2026'];
+ ORDER.forEach(function(o){
+  if(o[0]==='F'){L.push('','FRONT');return} if(o[0]==='B'){L.push('','BACK');return}
+  if(o[0]==='i'){L.push(o[1]+': '+o[2]);return}
+  if(o[0]==='judgesF'||o[0]==='judgesB'){var sd=o[0]==='judgesF'?'F':'B';JUDGES.forEach(function(j){if(j[4]===sd)L.push('Judge '+j[1]+': '+({y:'Yes',n:'No'}[S.j[j[0]]]||'—'))});if(sd==='B'&&S.n.judges)L.push('  ('+S.n.judges+')');return}
+  var r=byId(o[0]);L.push(r.title+': '+(optLabel(r,S.v[r.id])||'—'));if(S.n[r.id])L.push('  ('+S.n[r.id]+')');
+ });
+ L.push('','Vote by 8 p.m. at the Health and Justice Building, 151 S University Ave. Bring photo ID + proof of address.','',link());
+ return L.join('\n');
+}
+
+/* ================= depth + topic ================= */
+function setDepth(d){
+ document.querySelectorAll('[data-depth]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.depth===d?'true':'false')});
+ document.querySelectorAll('details.race').forEach(function(x){x.open=d!=='overview'});
+ document.querySelectorAll('details.row, .race details.more').forEach(function(x){x.open=d==='deep'});
+ if(d!=='overview')window.scrollTo({top:document.getElementById('races').offsetTop-document.getElementById('bar').offsetHeight-8,behavior:'smooth'});
+}
+function setLens(l){
+ document.querySelectorAll('[data-lens]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lens===l?'true':'false')});
+ var st=document.getElementById('lensStyle');
+ if(!l){document.body.removeAttribute('data-lens');st.textContent='';return}
+ document.body.setAttribute('data-lens',l);
+ st.textContent='details.race:not([data-issues~='+l+']),.row[data-issue]:not([data-issue~='+l+']),[data-sec]{display:none}';
+ var n=0;document.querySelectorAll('details.race').forEach(function(x){if((x.dataset.issues||'').split(' ').indexOf(l)>=0){x.open=true;n++}});
+ document.querySelectorAll('details.row[data-issue~='+l+']').forEach(function(x){x.open=true});
+ document.getElementById('lensnote').innerHTML=ICO[l]+' Showing just '+l+', across the '+n+' races where it comes up. <button type="button" data-lens-reset>Show everything</button>';
+ window.scrollTo({top:document.getElementById('lensnote').offsetTop-document.getElementById('bar').offsetHeight-8,behavior:'smooth'});
+}
+function goTo(id){closeSheet();if(document.body.hasAttribute('data-lens'))setLens('');var el=document.getElementById('race-'+id);if(!el)return;el.open=true;setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},60)}
+function openSheet(){refresh();var s=document.getElementById('sheet');s.classList.add('on');s.setAttribute('aria-hidden','false');document.body.classList.add('sheet-open')}
+function closeSheet(){var s=document.getElementById('sheet');s.classList.remove('on');s.setAttribute('aria-hidden','true');document.body.classList.remove('sheet-open')}
+
+/* ================= wire up ================= */
+var lst=document.createElement('style');lst.id='lensStyle';document.head.appendChild(lst);
+load();render();
+function auto(t){t.style.height='auto';t.style.height=Math.max(44,t.scrollHeight+3)+'px'}
+document.querySelectorAll('textarea[data-note]').forEach(function(t){t.value=S.n[t.dataset.note]||''});
+document.addEventListener('toggle',function(e){if(e.target.tagName==='DETAILS'&&e.target.open)e.target.querySelectorAll('textarea').forEach(auto)},true);
+refresh();
+var noteT;
+document.addEventListener('input',function(e){var t=e.target;if(!t.dataset||!t.dataset.note)return;auto(t);S.n[t.dataset.note]=t.value;clearTimeout(noteT);
+ var lbl=document.querySelector('[data-saved="'+t.dataset.note+'"]');noteT=setTimeout(function(){save(true);if(lbl){lbl.textContent='Saved ✓';setTimeout(function(){lbl.textContent=''},1500)}},400)});
+document.addEventListener('click',function(e){
+ var b=e.target.closest('button');if(!b)return;
+ if(b.dataset.race){var r=b.dataset.race;if(S.v[r]===b.dataset.val)delete S.v[r];else S.v[r]=b.dataset.val;save();return}
+ if(b.dataset.judge){var j=b.dataset.judge;if(S.j[j]===b.dataset.j)delete S.j[j];else S.j[j]=b.dataset.j;save();return}
+ if(b.id==='jYes'){JUDGES.forEach(function(j){S.j[j[0]]='y'});save();return}
+ if(b.id==='jClear'){S.j={};save();return}
+ if(b.dataset.depth){setDepth(b.dataset.depth);return}
+ if(b.hasAttribute('data-lens')){setLens(b.dataset.lens);return}
+ if(b.hasAttribute('data-lens-reset')){setLens('');return}
+ if(b.dataset.go){goTo(b.dataset.go);return}
+ if(b.id==='openSheet'){openSheet();return}
+ if(b.id==='closeSheet'){closeSheet();return}
+ if(b.id==='toTop'){window.scrollTo({top:0,behavior:'smooth'});return}
+ if(b.id==='copy'){copy(asText());return}
+ if(b.id==='share'){var txt=asText();if(navigator.share)navigator.share({title:'My ballot',text:txt}).catch(function(){});else copy(txt);return}
+ if(b.id==='clear'){if(confirm('Clear all your picks and notes?')){S={v:{},n:{},j:{},t:0};document.querySelectorAll('textarea[data-note]').forEach(function(t){t.value='';auto(t)});save()}return}
+});
+document.getElementById('sheet').addEventListener('click',function(e){if(e.target.id==='sheet')closeSheet()});
+document.getElementById('showJ').addEventListener('change',function(e){document.getElementById('sheet').classList.toggle('showj',e.target.checked)});
+function copy(t){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(function(){toast('Copied')},function(){fallback(t)});else fallback(t)}
+function fallback(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{document.execCommand('copy');toast('Copied')}catch(e){}document.body.removeChild(a)}
+function barH(){document.documentElement.style.setProperty('--bar',document.getElementById('bar').offsetHeight+'px')}
+barH();window.addEventListener('resize',barH);
 </script>
 </body>
 </html>
